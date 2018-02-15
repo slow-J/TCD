@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT volunteerArea (volunteerSpace*)>
+<!ELEMENT volunteerSpace (ownInfo, appeals*, news*, hours)>
+
+<!ELEMENT ownInfo (name, address, contactInfo, accountAccess)>
+<!ELEMENT name (firstname+, surname+)>
+<!-- one  or more firstnames and surnames -->
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT surname (#PCDATA)>
+
+<!ELEMENT address (addressLine1, addressLine2?, city, county, country?)>
+<!-- addressline1 always needed, addressline2 one or nothing -->
+<!ELEMENT addressLine1 (#PCDATA)>
+<!ELEMENT addressLine2 (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT county (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+
+<!ELEMENT contactInfo (email, phoneNumber)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phoneNumber (#PCDATA)>
+
+<!ELEMENT accountAccess ( accountUsername, accountPassword, idNumber, hoursAvailable)>
+<!-- every volunteer has a username, account, id number, and hours available -->
+<!ELEMENT accountUsername (#PCDATA)>
+<!ELEMENT accountPassword (#PCDATA)>
+<!ELEMENT idNumber (#PCDATA)>
+<!ELEMENT hoursAvailable (#PCDATA)>
+<!-- all this above is your volunteer info when you log into the volunteer area -->
+
+
+<!ELEMENT appeals ( appealName, appealCountry*, appealUrgency)>
+<!-- appeal urgency determines which donations get donations when the donation is sent to where needed most, an urgency of 1 is highest/ 10 lowest
+     , not every appeal has a set country so it can be none or one or more -->
+<!ELEMENT appealName (#PCDATA)>
+<!ELEMENT appealCountry (#PCDATA)>
+<!ELEMENT appealUrgency (#PCDATA)>
+
+<!ELEMENT news ( article, headline, byline?,author)>
+<!-- not every article has byline -->
+<!ELEMENT article (#PCDATA)>
+<!ELEMENT headline (#PCDATA)>
+<!ELEMENT byline (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+
+<!ELEMENT hours ( hoursEligible, hoursGiven)>
+<!-- every volunteer has a username, account, id number, and hours available -->
+<!ELEMENT hoursEligible (#PCDATA)>
+<!ELEMENT hoursGiven (#PCDATA)>

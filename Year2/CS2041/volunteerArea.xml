@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE volunteerArea SYSTEM "volunteer_area.dtd">
+
+<volunteerArea>
+	<volunteerSpace>
+		<ownInfo>
+			<name>
+				<firstname> Dylan</firstname>
+				<surname> Long </surname>
+			</name>
+
+			<address>
+				<addressLine1> 123 Beach Road </addressLine1>
+				<addressLine2> Willow Heights </addressLine2>
+				<city> Rolando </city>
+				<county> Clare </county>
+			</address>
+
+			<contactInfo>
+				<email> longy@gmail.com </email>
+				<phoneNumber> 0872234524 </phoneNumber>
+			</contactInfo>
+
+			<accountAccess>
+				<accountUsername> longy </accountUsername>
+				<accountPassword> longerson </accountPassword>
+				<idNumber> 52 </idNumber>
+				<hoursAvailable> 13 </hoursAvailable>
+			</accountAccess>
+
+
+		</ownInfo>	
+		<appeals>
+			<appealName> Christmas Appeal </appealName>
+			<appealUrgency> 1 </appealUrgency>
+		</appeals>
+
+		<appeals>
+			<appealName> Yemen Crisis Appeal </appealName>
+			<appealCountry> Yemen </appealCountry>
+			<appealUrgency> 3 </appealUrgency>
+		</appeals>
+		
+		<news>
+			<article> Your donations has been put to amazing use as we help a village of 200 
+				in Yemen with the building of a new water well and pump </article>
+			<headline> Yemen relief arrives just in time </headline>
+			<author> Damien McCarthy </author>
+		</news>	
+
+		<hours>
+			<hoursEligible> 13 </hoursEligible>
+			<hoursGiven> 20 </hoursGiven>
+
+		</hours>
+
+	</volunteerSpace>	
+
+	<volunteerSpace>
+		<ownInfo>
+			<name>
+			<firstname> Darren </firstname>
+			<surname> Madden </surname>
+			</name>
+
+			<address>
+				<addressLine1> 47 Oak Rise </addressLine1>
+				<city> Clondalkin </city>
+				<county> Dublin 22 </county>
+				<country> Ireland </country>
+			</address>
+
+			<contactInfo>
+				<email> darbro@gmail.com </email>
+				<phoneNumber> 0871263858 </phoneNumber>
+			</contactInfo>
+
+			<accountAccess>
+				<accountUsername> dar_mad </accountUsername>
+				<accountPassword> lll </accountPassword>
+				<idNumber> 53 </idNumber>
+				<hoursAvailable> 6 </hoursAvailable>
+			</accountAccess>
+		</ownInfo>	
+
+		<appeals>
+			<appealName> Christmas Appeal </appealName>
+			<appealUrgency> 1 </appealUrgency>
+		</appeals>
+
+		<appeals>
+			<appealName> Yemen Crisis Appeal </appealName>
+			<appealCountry> Yemen </appealCountry>
+			<appealUrgency> 3 </appealUrgency>
+		</appeals>
+		
+		<news>
+			<article> Your donations has been put to amazing use as we help a village of 200 
+				in Yemen with the building of a new water well and pump </article>
+			<headline> Yemen relief arrives just in time </headline>
+			<author> Damien McCarthy </author>
+		</news>	
+
+		<hours>
+			<hoursEligible> 6 </hoursEligible>
+			<hoursGiven> 5 </hoursGiven>
+
+		</hours>
+
+	</volunteerSpace>	
+</volunteerArea>	

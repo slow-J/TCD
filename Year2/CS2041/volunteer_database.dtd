@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT volunteerDatabase (volunteer*)>
+
+<!ELEMENT volunteer (name, address, contactInfo, accountAccess)>
+
+<!ELEMENT name (firstname+, surname+)>
+<!-- one  or more firstnames and surnames -->
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT surname (#PCDATA)>
+
+<!ELEMENT address (addressLine1, addressLine2?, city, county, country?)>
+<!-- addressline1 always needed, addressline2 one or nothing -->
+<!ELEMENT addressLine1 (#PCDATA)>
+<!ELEMENT addressLine2 (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT county (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+
+<!ELEMENT contactInfo (email, phoneNumber)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phoneNumber (#PCDATA)>
+
+<!ELEMENT accountAccess ( accountUsername, accountPassword, idNumber, hoursAvailable)>
+<!-- every volunteer has a username, account, id number, and hours available -->
+<!ELEMENT accountUsername (#PCDATA)>
+<!ELEMENT accountPassword (#PCDATA)>
+<!ELEMENT idNumber (#PCDATA)>
+<!ELEMENT hoursAvailable (#PCDATA)>

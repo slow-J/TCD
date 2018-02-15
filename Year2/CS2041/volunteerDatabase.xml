@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE volunteerDatabase SYSTEM "volunteer_database.dtd">
+
+<volunteerDatabase>
+	<volunteer>
+		<name>
+			<firstname> Dylan</firstname>
+			<surname> Long </surname>
+		</name>
+
+		<address>
+			<addressLine1> 123 Beach Road </addressLine1>
+			<addressLine2> Willow Heights </addressLine2>
+			<city> Rolando </city>
+			<county> Clare </county>
+		</address>
+
+		<contactInfo>
+			<email> longy@gmail.com </email>
+			<phoneNumber> 0872234524 </phoneNumber>
+		</contactInfo>
+
+		<accountAccess>
+			<accountUsername> longy </accountUsername>
+			<accountPassword> longerson </accountPassword>
+			<idNumber> 52 </idNumber>
+			<hoursAvailable> 13 </hoursAvailable>
+		</accountAccess>
+	</volunteer>
+
+	<volunteer>
+
+		<name>
+			<firstname> Darren </firstname>
+			<surname> Madden </surname>
+		</name>
+
+		<address>
+			<addressLine1> 47 Oak Rise </addressLine1>
+			<city> Clondalkin </city>
+			<county> Dublin 22 </county>
+			<country> Ireland </country>
+		</address>
+
+		<contactInfo>
+			<email> darbro@gmail.com </email>
+			<phoneNumber> 0871263858 </phoneNumber>
+		</contactInfo>
+
+		<accountAccess>
+			<accountUsername> dar_mad </accountUsername>
+			<accountPassword> lll </accountPassword>
+			<idNumber> 53 </idNumber>
+			<hoursAvailable> 6 </hoursAvailable>
+		</accountAccess>
+	</volunteer>
+
+	<volunteer>
+
+		<name>
+			<firstname> Jack </firstname>
+			<surname> Rovet </surname>
+		</name>
+
+		<address>
+			<addressLine1> 73 Big Street </addressLine1>
+			<city> Coolock </city>
+			<county> Dublin </county>
+			<country> Ireland </country>
+		</address>
+
+		<contactInfo>
+			<email> Jack1337@gmail.com </email>
+			<phoneNumber> 0852742195 </phoneNumber>
+		</contactInfo>
+
+		<accountAccess>
+			<accountUsername> parojack </accountUsername>
+			<accountPassword> 12345r </accountPassword>
+			<idNumber> 54 </idNumber>
+			<hoursAvailable> 10 </hoursAvailable>
+		</accountAccess>
+	</volunteer>
+</volunteerDatabase>
