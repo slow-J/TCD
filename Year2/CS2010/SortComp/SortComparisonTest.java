@@ -15,15 +15,15 @@ import org.junit.runners.JUnit4;
  *  
  *  *  
  *  
- *				       | Insert  | Quick  | Merge  | Shell  | Selection | Bubble  | all in nanoseconds from stopwatch.java
+ *		       | Insert  | Quick  | Merge  | Shell  | Selection | Bubble  | all in nanoseconds from stopwatch.java
  * --------------------|---------|--------|--------|--------|-----------|---------|---------------------------------------------
- * 10 random		   | 35470   | 12075  | 9660   | 3018   | 3622      | 3321    |	
- * 100 random		   | 91769   | 41658  | 95090  | 13886  | 127994    | 152446  |
- * 1000 random		   | 3545192 | 427150 | 633329 | 134031 | 247767    | 2522146 | 
- * 1000 few unique	   | 721777  | 121957 | 186859 | 143691 | 237272    | 2191293 |
+ * 10 random	       | 35470   | 12075  | 9660   | 3018   | 3622      | 3321    |	
+ * 100 random	       | 91769   | 41658  | 95090  | 13886  | 127994    | 152446  |
+ * 1000 random	       | 3545192 | 427150 | 633329 | 134031 | 247767    | 2522146 | 
+ * 1000 few unique     | 721777  | 121957 | 186859 | 143691 | 237272    | 2191293 |
  * 1000 nearly ordered | 140673  | 89052  | 138559 | 140975 | 1281147   | 217348  | 
  * 1000 reverse order  | 4783171 | 486619 | 105958 | 140673 | 151238    | 190481  |
- * 1000 sorted		   | 9962.0  | 580501 | 81506  | 136447 | 150030    | 164219  |
+ * 1000 sorted	       | 9962.0  | 580501 | 81506  | 136447 | 150030    | 164219  |
  *
  * Also, in the comment at the top of your SortComparisonTest file please answer the following
  * questions:
