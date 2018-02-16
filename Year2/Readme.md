@@ -1,3 +1,4 @@
+    Senior Fresh(SF)
     CS2010 - Algorithms & Data Structures
     CS2013 - Programming Project
     CS2014 - Systems Programming
