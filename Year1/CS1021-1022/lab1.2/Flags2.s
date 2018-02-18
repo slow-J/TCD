@@ -1,0 +1,46 @@
+	AREA	Flags2, CODE, READONLY
+	IMPORT	main
+	EXPORT	start
+
+start
+	
+	LDR R1, =0x10000000
+	LDR R2, =0x10000000
+	ADDS R0, R1, R2		;N = 0; Z = 0; C = 0; V = 0
+	
+	LDR R1, =0x80000000
+	LDR R2, =0x00000000
+	ADDS R0, R1, R2		;N = 1; Z = 0; C = 0; V = 0
+	
+	LDR R1, =0x30000000
+	LDR R2, =0xE0000000
+	ADDS R0, R1, R2		;N = 0; Z = 0; C = 1; V = 0
+	
+	LDR R1, =0xC0000000
+	LDR R2, =0xC0000000
+	ADDS R0, R1, R2		 ;N = 1; Z = 0; C = 1; V = 0
+	
+	LDR R1, =0x20000000
+	LDR R2, =0xE0000000
+	ADDS R0, R1, R2		;N = 0; Z = 1; C = 1; V = 0
+	
+	LDR R1, =0x00000000
+	LDR R2, =0x00000000
+	ADDS R0, R1, R2		;N = 0; Z = 1; C = 0; V = 0
+	
+	LDR R1, =0x70000000
+	LDR R2, =0x70000000
+	ADDS R0, R1, R2		;N = 1; Z = 0; C = 0; V = 1
+	
+	LDR R1, =0xB0000000
+	LDR R2, =0xB0000000
+	ADDS R0, R1, R2		;N = 0; Z = 0; C = 1; V = 1
+	
+	LDR R1, =0x80000000
+	LDR R2, =0x80000000
+	ADDS R0, R1, R2		;N = 0; Z = 1; C = 1; V = 1
+
+
+stop	B	stop
+
+	END	

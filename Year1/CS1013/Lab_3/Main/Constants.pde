@@ -1,0 +1,13 @@
+final int SCREENX = 400;
+final int SCREENY = 400;
+final int MARGIN = 30;
+final int A_FORWARD = 0;
+final int A_BACKWARD = 1;
+final int A_DOWN_R = 2;
+final int A_DOWN_L = 3;
+final int PADDLEHEIGHT = 15; 
+final int PADDLEWIDTH = 50; 
+final int BULLETHEIGHT = 15; 
+final int BULLETWIDTH = 4; 
+final int BOMBHEIGHT = 7; 
+final int BOMBWIDTH = 15; 
