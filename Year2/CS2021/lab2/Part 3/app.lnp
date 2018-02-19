@@ -1,0 +1,5 @@
+--cpu ARM7TDMI
+".\main.o"
+".\EA-LPC2138-EDU-C.lib"
+--library_type=microlib --strict --scatter ".\app.sct"
+--summary_stderr --info summarysizes -o .\app.axf

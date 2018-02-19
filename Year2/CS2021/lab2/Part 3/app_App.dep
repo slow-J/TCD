@@ -1,0 +1,5 @@
+Dependencies for Project 'app', Target 'App': (DO NOT MODIFY !)
+F (.\main.c)(0x5A8ACA10)(-c --cpu ARM7TDMI -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="516"-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (C:\Keil_v5\ARM\Inc\Philips\LPC213x.H)(0x559D2F66)
+I (C:\Keil_v5\ARM\ARMCC_505u2\include\stdio.h)(0x54C2B638)
+F (.\EA-LPC2138-EDU-C.lib)(0x5A8987E0)()
