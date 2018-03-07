@@ -1,0 +1,238 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             table, DATA, READWRITE
+    2 00000000         ;    bits that need to be turned on from values 0 - F
+    3 00000000 00003780 
+              00000300 
+              00009580 
+              00008780 
+              0000A300 
+              0000A680 
+              0000B680 
+              00000380 
+              0000B780 
+              0000A380 
+              0000B380 
+              0000B600 
+              00003480 
+              00009700 
+              0000B480 
+              0000B080 ttb     DCD              0x00003780,0x00000300,0x0000958
+0,0x00008780,0x0000A300,0x0000A680,0x0000B680,0x00000380,0x0000B780,0x0000A380,
+0x0000B380,0x0000B600,0x00003480,0x0009700,0x0000B480,0x0000B080
+    4 00000040         
+    5 00000040         ;0000 0000 0000 0000 0011 0111 1000 0000
+    6 00000040         ;31   27   23   19   15   11   7    3
+    7 00000040         ;                  . G FE  DCB A
+    8 00000040         ; A = P0.7
+    9 00000040         ; B = P0.8
+   10 00000040         ; C = P0.9
+   11 00000040         ; D = P0.10
+   12 00000040         ; E = P0.12
+   13 00000040         ; F = P0.13
+   14 00000040         ; G = P0.15
+   15 00000040         ; RDP = P0.16
+   16 00000040         
+   17 00000040                 AREA             AsmTemplate, CODE, READONLY
+   18 00000000                 IMPORT           main
+   19 00000000         
+   20 00000000         ; 7 segment display
+   21 00000000         ; (c) John Carbeck, 2018.
+   22 00000000         
+   23 00000000                 EXPORT           start
+   24 00000000         start
+   25 00000000         
+   26 00000000 E0028008 
+                       IO0DIR  EQU              0xE0028008
+   27 00000000 E0028004 
+                       IO0SET  EQU              0xE0028004
+   28 00000000 E002800C 
+                       IO0CLR  EQU              0xE002800C
+   29 00000000         
+   30 00000000 E59F1058        LDR              R1,=IO0DIR
+   31 00000004 E59F2058        LDR              R2,=0x0001B780
+   32 00000008         ;   0000 0000 0000 0001 1011 0111 1000 0000
+   33 00000008         ;   31   27   23   19   15   11   7    3
+   34 00000008 E5812000        STR              R2,[R1]
+   35 0000000C E59F1054        LDR              R1,=IO0SET
+   36 00000010 E5812000        STR              R2,[R1]
+   37 00000014 E59F2050        LDR              R2,=IO0CLR
+   38 00000018         
+   39 00000018 E3A03004        LDR              R3, =4
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   40 0000001C E59F404C        LDR              R4, =ttb
+   41 00000020 E59F504C        LDR              R5, =0x000FFFF0 ;all leds
+   42 00000024         restart
+   43 00000024 E3A0600F        LDR              R6, =15     ;end of table
+   44 00000028 E0070396        MUL              R7, R6, R3  ; multiply by 4 for
+                                                             memory sized jumpe
+                                                            
+   45 0000002C         while
+   46 0000002C E3560000        CMP              R6, #0      ;for loop counting 
+                                                            down from 15
+   47 00000030 BAFFFFFB        BLT              restart
+   48 00000034 E0848007        ADD              R8, R4, R7  ;start of table plu
+                                                            s memory offset
+   49 00000038 E7948007        LDR              R8, [R4, R7] ;load value from t
+                                                            able
+   50 0000003C E5825000        STR              R5, [R2]    ;turn off all led t
+                                                            hat are on
+   51 00000040 E5818000        STR              R8, [R1]    ;turn on bits speci
+                                                            fied by value
+   52 00000044         ;delay for about a half second
+   53 00000044 E59F902C        LDR              R9, =5000000
+   54 00000048 E2599001 
+                       dloop   SUBS             R9, R9, #1
+   55 0000004C 1AFFFFFD        BNE              dloop
+   56 00000050 E2466001        SUB              R6, R6, #1
+   57 00000054 E2477004        SUB              R7, R7, #4
+   58 00000058 EAFFFFF3        B                while
+   59 0000005C         
+   60 0000005C EAFFFFFE 
+                       stop    B                stop
+   61 00000060                 END
+              E0028008 
+              0001B780 
+              E0028004 
+              E002800C 
+              00000000 
+              000FFFF0 
+              004C4B40 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\a
+pp.d -o.\app.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Ke
+il_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 
+1" --predefine="__UVISION_VERSION SETA 516" --list=.\listings\app.lst App.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+table 00000000
+
+Symbol: table
+   Definitions
+      At line 1 in file App.s
+   Uses
+      None
+Comment: table unused
+ttb 00000000
+
+Symbol: ttb
+   Definitions
+      At line 3 in file App.s
+   Uses
+      At line 40 in file App.s
+Comment: ttb used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+AsmTemplate 00000000
+
+Symbol: AsmTemplate
+   Definitions
+      At line 17 in file App.s
+   Uses
+      None
+Comment: AsmTemplate unused
+dloop 00000048
+
+Symbol: dloop
+   Definitions
+      At line 54 in file App.s
+   Uses
+      At line 55 in file App.s
+Comment: dloop used once
+restart 00000024
+
+Symbol: restart
+   Definitions
+      At line 42 in file App.s
+   Uses
+      At line 47 in file App.s
+Comment: restart used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 24 in file App.s
+   Uses
+      At line 23 in file App.s
+Comment: start used once
+stop 0000005C
+
+Symbol: stop
+   Definitions
+      At line 60 in file App.s
+   Uses
+      At line 60 in file App.s
+Comment: stop used once
+while 0000002C
+
+Symbol: while
+   Definitions
+      At line 45 in file App.s
+   Uses
+      At line 58 in file App.s
+Comment: while used once
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+IO0CLR E002800C
+
+Symbol: IO0CLR
+   Definitions
+      At line 28 in file App.s
+   Uses
+      At line 37 in file App.s
+Comment: IO0CLR used once
+IO0DIR E0028008
+
+Symbol: IO0DIR
+   Definitions
+      At line 26 in file App.s
+   Uses
+      At line 30 in file App.s
+Comment: IO0DIR used once
+IO0SET E0028004
+
+Symbol: IO0SET
+   Definitions
+      At line 27 in file App.s
+   Uses
+      At line 35 in file App.s
+Comment: IO0SET used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 18 in file App.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+347 symbols in table

@@ -1,0 +1,3 @@
+Dependencies for Project 'App', Target 'Sample': (DO NOT MODIFY !)
+F (.\App.s)(0x5A8AC31C)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 516"--list .\listings\app.lst --xref -o .\app.o --depend .\app.d)
+F (.\EA-LPC2138-EDU-ASM.lib)(0x5A881EA9)()
