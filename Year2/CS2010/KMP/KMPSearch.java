@@ -30,9 +30,17 @@ public class KMPSearch {
    * The method returns the index of the first ocurrence of a pattern pat in String txt.
    * It should return -1 if the pat is not present
    */
-  public static int searchFirst(String txt, String pat) {
-    //TODO: Implementation
-    return -1;
+  public static int searchFirst(String txt, String pat) 
+  {
+    int lenP = pat.length();
+    int lenT = txt.length();
+    int i, j;
+    for (i = 0, j = 0; i < lenT && j < lenP; i++) 
+    {
+      j = dfa[txt.charAt(i)][j];
+    }
+        if (j == lenP) return i - lenP;    // found
+        return -1;                   // pattern not present
   }
 
   /*
