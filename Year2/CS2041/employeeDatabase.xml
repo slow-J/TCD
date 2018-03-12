@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employeeDatabase SYSTEM "employeeDatabase.dtd">
+
+<employeeDatabase>
+	<employee employeeID = "id_001">
+		<name>
+			<firstname> Aoife </firstname>
+			<surname> O'Connel </surname>
+		</name>
+
+		<address>
+			<addressLine1> 3 Beach Road </addressLine1>
+			<addressLine2> Beach Village </addressLine2>
+			<city> Dublin </city>
+			<county> Dublin </county>
+		</address>
+
+		<contactInfo>
+			<email> JohnDoe@gmail.com </email>
+			<phoneNumber> 0871234524 </phoneNumber>
+		</contactInfo>
+
+		<jobInfo>
+			<payPerHour currency = "Euro">10.00</payPerHour>
+			<hoursWorkedPerWeek> 30 </hoursWorkedPerWeek>
+			<jobTitle> Secratery </jobTitle>
+		</jobInfo>
+	</employee>
+
+	<employee employeeID = "id_002">
+
+		<name>
+			<firstname> John </firstname>
+			<firstname> Paul </firstname>
+			<surname> Johnston </surname>
+		</name>
+
+		<address>
+			<addressLine1> 16 Broad Street </addressLine1>
+			<city> Dublin </city>
+			<county> Dublin </county>
+			<country> Ireland </country>
+		</address>
+
+		<contactInfo>
+			<email> janejohnston@gmail.com </email>
+			<phoneNumber> 0878463858 </phoneNumber>
+		</contactInfo>
+
+		<jobInfo>
+			<payPerHour currency = "Euro">15.00</payPerHour>
+			<hoursWorkedPerWeek> 40 </hoursWorkedPerWeek>
+			<jobTitle> Accountant </jobTitle>
+		</jobInfo>
+	</employee>
+
+	<employee employeeID = "id_003">
+
+		<name>
+			<firstname> Niamh </firstname>
+			<surname> Smith </surname>
+		</name>
+
+		<address>
+			<addressLine1> 78 Main Street </addressLine1>
+			<city> Dublin </city>
+			<county> Dublin </county>
+			<country> Ireland </country>
+		</address>
+
+		<contactInfo>
+			<email> Jack1337@gmail.com </email>
+			<phoneNumber> 0892742195 </phoneNumber>
+		</contactInfo>
+
+		<jobInfo>
+			<payPerHour currency = "Euro">15.00</payPerHour>
+			<hoursWorkedPerWeek> 15 </hoursWorkedPerWeek>
+			<jobTitle> Web Designer </jobTitle>
+		</jobInfo>
+	</employee>
+</employeeDatabase>

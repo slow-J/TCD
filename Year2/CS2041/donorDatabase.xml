@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE donorDatabase SYSTEM "donorDatabase.dtd">
+
+<donorDatabase>
+	<donor>
+		<name>
+			<firstname> John </firstname>
+			<surname> Doe </surname>
+		</name>
+
+		<address>
+			<addressLine1> 123 Beach Road </addressLine1>
+			<addressLine2> Beach Village </addressLine2>
+			<city> Dublin </city>
+			<county> Dublin </county>
+		</address>
+
+		<contactInfo>
+			<email> JohnDoe@gmail.com </email>
+			<phoneNumber> 0871234524 </phoneNumber>
+		</contactInfo>
+
+		<donationInfo>
+			<donationAmount currency = "Euro">50.00</donationAmount>
+			<donationMethod> Debit Card </donationMethod>
+			<appeal> Where needed most Appeal </appeal>
+		</donationInfo>
+	</donor>
+
+	<donor>
+
+		<name>
+			<firstname> Jane </firstname>
+			<surname> Johnston </surname>
+		</name>
+
+		<address>
+			<addressLine1> 16 Broad Street </addressLine1>
+			<city> Dublin </city>
+			<county> Dublin </county>
+			<country> Ireland </country>
+		</address>
+
+		<contactInfo>
+			<email> janejohnston@gmail.com </email>
+			<phoneNumber> 0878463858 </phoneNumber>
+		</contactInfo>
+
+		<donationInfo>
+			<donationAmount currency = "Euro">25.50</donationAmount>
+			<donationMethod> PayPal </donationMethod>
+			<appeal> Myanmar Emergency Appeal </appeal>
+		</donationInfo>
+	</donor>
+
+	<donor>
+
+		<name>
+			<firstname> Jack </firstname>
+			<surname> Pieterson </surname>
+		</name>
+
+		<address>
+			<addressLine1> 78 Main Street </addressLine1>
+			<city> Dublin </city>
+			<county> Dublin </county>
+			<country> Ireland </country>
+		</address>
+
+		<contactInfo>
+			<email> Jack1337@gmail.com </email>
+			<phoneNumber> 0892742195 </phoneNumber>
+		</contactInfo>
+
+		<donationInfo>
+			<donationAmount currency = "Euro">200.00</donationAmount>
+			<donationMethod> PayPal </donationMethod>
+			<appeal> Yemen Crisis Appeal </appeal>
+		</donationInfo>
+	</donor>
+</donorDatabase>

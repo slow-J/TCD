@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE appealDatabase SYSTEM "appealDatabase.dtd">
+
+<appealDatabase>
+	<appeal id="123456789">
+		<name> Christmas Appeal	</name>
+		<balance> €100000.00 </balance>
+		<appealNumber> 1 </appealNumber>
+	</appeal>
+	
+	<appeal id="987654321">
+		<name> Mynamar Crisis Appeal </name>
+
+		<balance> €200000.00 </balance>
+		<appealNumber> 2 </appealNumber>
+	</appeal>
+	
+	<appeal id="135792468">
+		<name> Yemen Crisis Appeal </name>
+		<balance> €500000.00 </balance>
+		<appealNumber> 3 </appealNumber>
+	</appeal>
+	
+	<appeal id="246813579">
+		<name> Migration Crisis Appeal </name>
+		<balance> €10000.00 </balance>
+		<appealNumber> 4 </appealNumber>
+	</appeal>
+</appealDatabase>
+		
+	

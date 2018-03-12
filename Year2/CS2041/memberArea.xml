@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE memberArea SYSTEM "member_area.dtd">
+
+<memberArea>
+	<memberSpace>
+		<ownInfo>
+			<name>
+				<firstName> Cristiano </firstName>
+				<surname> Ronaldo </surname>
+			</name>
+
+			<address>
+				<addressLine1> 7 Real Road </addressLine1>
+				<city> Madrid </city>
+				<county> Madrid </county>
+				<country> Spain </country>
+			</address>
+
+			<contactInfo>
+				<email> ronaldoc@tcd.ie </email>
+				<phoneNumber> 0871234567 </phoneNumber>
+			</contactInfo>		
+		
+			<accountAccess>
+				<accountUsername> CR7 </accountUsername>
+				<accountPassword> thebest </accountPassword>
+			</accountAccess>
+		</ownInfo>
+
+		<appeals>
+			<appealName> Childrens Hospital Appeal </appealName>
+			<appealUrgency> 1 </appealUrgency>
+		</appeals>
+
+		<appeals>
+			<appealName> Homelessness Appeal </appealName>
+			<appealUrgency> 2 </appealUrgency>
+		</appeals>
+
+		<appeals>
+			<appealName> New Schools Appeal </appealName>
+			<appealUrgency> 3 </appealUrgency>
+		</appeals>
+
+		<news>
+			<article> Your kind donate to the New Schools Appeal you can help
+					to build new rooms and provide new state of the art machinery 
+					and technology for many childrens hospitals around the world
+			</article>
+			<headline> Improved Hospitals Around the World </headline>
+			<author> James Murphy </author>
+		</news>	
+	</volunteerSpace>
+
+	<volunteerSpace>
+		<ownInfo>
+			<name>
+				<firstName> Kyrie </firstName>
+			<surname> Irving </surname>e>
+			</name>
+
+			<address>
+				<addressLine1> 12 Greenough Street </addressLine1>
+				<addressLine2> Brookline </addressLine2>			
+				<city> Boston </city>
+				<county> Massachusetts </county>
+				<country> USA </country>
+			</address>
+
+			<contactInfo>
+				<email> irvingk@tcd.ie </email>
+				<phoneNumber> 6172429980 </phoneNumber>
+			</contactInfo>		
+		
+			<accountAccess>
+				<accountUsername> kyrie11 </accountUsername>
+				<accountPassword> celtics </accountPassword>
+			</accountAccess>
+		</ownInfo>
+
+		<appeals>
+			<appealName> Childrens Hospital Appeal </appealName>
+			<appealUrgency> 1 </appealUrgency>
+		</appeals>
+
+		<appeals>
+			<appealName> Homelessness Appeal </appealName>
+			<appealUrgency> 2 </appealUrgency>
+		</appeals>
+
+		<appeals>
+			<appealName> New Schools </appealName>
+			<appealUrgency> 3 </appealUrgency>
+		</appeals>
+
+		<news>
+			<article> Your kind donate to the New Schools Appeal you can help
+					to build new rooms and provide new state of the art machinery 
+					and technology for many childrens hospitals around the world
+			</article>
+			<headline> Improved Hospitals Around the World </headline>
+			<author> James Murphy </author>
+		</news>	
+	</volunteerSpace>
+
+	<volunteerSpace>
+		<ownInfo>
+			<name>
+			<firstName> Rob </firstName>
+			<surname> Lipsett </surname>
+		</name>
+
+		<address>
+			<addressLine1> 2 Wellington Road </addressLine1>
+			<addressLine2> Blackrock </addressLine2>			
+			<city> Dublin </city>
+			<county> Dublin </county>
+		</address>
+
+		<contactInfo>
+			<email> lipsettr@tcd.ie </email>
+			<phoneNumber> 0831234567 </phoneNumber>
+		</contactInfo>
+
+		<accountAccess>
+			<accountUsername> thelipsett </accountUsername>
+			<accountPassword> lippo </accountPassword>
+		</accountAccess>
+		</ownInfo>
+
+		<appeals>
+			<appealName> Childrens Hospital Appeal </appealName>
+			<appealUrgency> 1 </appealUrgency>
+		</appeals>
+
+		<appeals>
+			<appealName> Homelessness Appeal </appealName>
+			<appealUrgency> 2 </appealUrgency>
+		</appeals>
+
+		<appeals>
+			<appealName> New Schools </appealName>
+			<appealUrgency> 3 </appealUrgency>
+		</appeals>
+
+		<news>
+			<article> Your kind donate to the New Schools Appeal you can help
+					to build new rooms and provide new state of the art machinery 
+					and technology for many childrens hospitals around the world
+			</article>
+			<headline> Improved Hospitals Around the World </headline>
+			<author> James Murphy </author>
+		</news>	
+	</memberSpace>
+</memberArea>
+
