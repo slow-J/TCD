@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 03/09/2018 03:44:22 PM
+-- Create Date: 03/06/2018 11:23:21 AM
 -- Design Name: 
--- Module Name: logic_circuit_1 - Behavioral
+-- Module Name: full_add - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,20 +31,22 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity logic_circuit_1 is
-Port(
-		a_logic_in, b_logic_in : in STD_LOGIC_VECTOR(15 downto 0);
-		select_in : in STD_LOGIC_VECTOR(1 downto 0);
-		logic_output_1 : out STD_LOGIC_VECTOR(15 downto 0)
-	 );
-end logic_circuit_1;
+entity full_add is
+    Port(
+			X, Y, Cin : in STD_LOGIC;
+			Cout, S : out STD_LOGIC
+		);
+end full_add;
 
-architecture Behavioral of logic_circuit_1 is
+architecture Behavioral of full_add is
+
+signal S0, S1, S2 : STD_LOGIC;
 
 begin
-    logic_output_1 <= 	(a_logic_in and b_logic_in) after 1ns when select_in = "00" else
-								(a_logic_in or b_logic_in) after 1ns when select_in = "01" else
-								(a_logic_in xor b_logic_in) after 1ns when select_in = "10" else
-								(not (a_logic_in)) after 1ns;
+	S0 <= (X xor Y) after 1ns;
+	S1 <= (Cin and S0) after 1ns;
+	S2 <= (X and Y) after 1ns;
+	S <= (S0 xor Cin) after 1ns;
+	Cout <= (S1 or S2) after 1ns;
 
 end Behavioral;

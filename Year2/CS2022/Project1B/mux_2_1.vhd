@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 03/09/2018 03:44:22 PM
+-- Create Date: 03/12/2018 11:23:20 AM
 -- Design Name: 
--- Module Name: logic_circuit_1 - Behavioral
+-- Module Name: mux_2_1 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,20 +31,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity logic_circuit_1 is
-Port(
-		a_logic_in, b_logic_in : in STD_LOGIC_VECTOR(15 downto 0);
-		select_in : in STD_LOGIC_VECTOR(1 downto 0);
-		logic_output_1 : out STD_LOGIC_VECTOR(15 downto 0)
-	 );
-end logic_circuit_1;
+entity mux_2_1 is
+    Port ( 
+            I0, S0, S1 : in STD_LOGIC;
+			Z : out STD_LOGIC
+          );
+end mux_2_1;
 
-architecture Behavioral of logic_circuit_1 is
+architecture Behavioral of mux_2_1 is
 
 begin
-    logic_output_1 <= 	(a_logic_in and b_logic_in) after 1ns when select_in = "00" else
-								(a_logic_in or b_logic_in) after 1ns when select_in = "01" else
-								(a_logic_in xor b_logic_in) after 1ns when select_in = "10" else
-								(not (a_logic_in)) after 1ns;
+    Z <= 	S0 after 1ns when I0= '1' else
+				S1 after 1ns when I0 = '0' else
+				'0' after 1ns;
 
 end Behavioral;
