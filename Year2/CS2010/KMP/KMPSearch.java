@@ -1,5 +1,5 @@
-
-public class KMPSearch {
+public class KMPSearch 
+{
 
   /*
    * Bus Service Questions:
@@ -18,36 +18,79 @@ public class KMPSearch {
    */
 
    /*
-    * The method checks whether a pattern pat occurs at least once in String txt.
-    *
-    */
-  public static boolean contains(String txt, String pat) {
-    //TODO: Implementation
-    return false;
-  }
-
-  /*
-   * The method returns the index of the first ocurrence of a pattern pat in String txt.
-   * It should return -1 if the pat is not present
+   * The method checks whether a pattern pat occurs at least once in String txt.
+   *
    */
-  public static int searchFirst(String txt, String pat) 
+  public static boolean contains(String txt, String pat)
   {
     int lenP = pat.length();
     int lenT = txt.length();
     int i, j;
-    for (i = 0, j = 0; i < lenT && j < lenP; i++) 
+    for (i = 0, j = 0; i < lenT && j < lenP; i++)
     {
-      j = dfa[txt.charAt(i)][j];
+      if (txt.charAt(i) == pat.charAt(j))
+        j++;
+      else
+      {
+        i -= j;
+        j = 0;
+      }
+    }   
+    if (j == lenP)
+      return true; // found
+    else 
+      return false; // not found
+  }
+
+  /*
+   * The method returns the index of the first ocurrence of a pattern pat in
+   * String txt. It should return -1 if the pat is not present
+   */
+  public static int searchFirst(String txt, String pat)
+  {
+    int lenP = pat.length();
+    int lenT = txt.length();
+    int i, j;
+    for (i = 0, j = 0; i < lenT && j < lenP; i++)
+    {
+      if (txt.charAt(i) == pat.charAt(j))
+        j++;
+      else
+      {
+        i -= j;
+        j = 0;
+      }
     }
-        if (j == lenP) return i - lenP;    // found
-        return -1;                   // pattern not present
+    if (j == lenP)
+      return i - lenP; // found
+    else
+      return -1; // pattern not present
   }
 
   /*
    * The method returns the number of non-overlapping occurences of a pattern pat in String txt.
    */
-  public static int searchAll(String txt, String pat) {
-    //TODO: Implementation
-    return -1;
+  public static int searchAll(String txt, String pat) 
+  {
+    int lenP = pat.length();
+    int lenT = txt.length();
+    int i, j;
+    int patFound=0;
+    for (i = 0, j = 0; i < lenT && j < lenP; i++)
+    {
+      if (txt.charAt(i) == pat.charAt(j))
+        j++;
+      else
+      {
+        i -= j;
+        j = 0;
+      }
+      if (j == lenP)
+      {  
+        patFound++;
+        j=0;
+      }
+    }
+    return patFound;
   }
 }
