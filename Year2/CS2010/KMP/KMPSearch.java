@@ -5,16 +5,16 @@ public class KMPSearch
    * Bus Service Questions:
    *
    * 1. How many total vehicles is there information on?
-   *    //TODO
+   *    987
    *
    * 2. Does the file contain information about the vehicle number 16555?
-   *    //TODO
+   *    true
    *
    * 3. Locate the first record about a bus heading to HAMPTON PARK
-   *    //TODO
+   *    index number:: 19605
    *
    * 4. Does the file contain information about the vehicle number 9043409?
-   *    //TODO
+   *    false
    */
 
    /*
@@ -23,6 +23,8 @@ public class KMPSearch
    */
   public static boolean contains(String txt, String pat)
   {
+    if(txt.length()<1||pat.length()<1)
+       return false;
     int lenP = pat.length();
     int lenT = txt.length();
     int i, j;
@@ -48,6 +50,8 @@ public class KMPSearch
    */
   public static int searchFirst(String txt, String pat)
   {
+    if(txt.length()<1||pat.length()<1)
+      return -1;
     int lenP = pat.length();
     int lenT = txt.length();
     int i, j;
