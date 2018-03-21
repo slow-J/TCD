@@ -1,4 +1,4 @@
-/*
+﻿/*
  * A Contest to Meet (ACM) is a reality TV contest that sets three contestants at three random
  * city intersections. In order to win, the three contestants need all to meet at any intersection
  * of the city as fast as possible.
@@ -17,7 +17,7 @@
 
 public class CompetitionDijkstra
 {
-
+  private totalIntersections;
   /**
    * @param filename:
    *          A filename containing the details of the city road network
@@ -25,8 +25,15 @@ public class CompetitionDijkstra
    *          sB, sC: speeds for 3 contestants
    */
   CompetitionDijkstra(String filename, int sA, int sB, int sC)
-  {
+  { 
+    if filename.hasNextLine()
+    {
+      this.totalIntersections=filename.nextLine;
+    }
+    while(filename.hasNextLine())
+    {
 
+    }
     // TODO
   }
 
