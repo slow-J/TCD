@@ -1,1 +1,1 @@
-lab partner jack carbeck(@jdcarbeck)
+Microprocessor labs with Jack Carbeck (https://github.com/jdcarbeck)
