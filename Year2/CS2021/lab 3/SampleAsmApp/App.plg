@@ -1,0 +1,41 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Mike Brady\Dropbox\College\CS2021\Board Stuff\SampleAsmLibApp\App.uvproj
+Project File Date:  03/14/2011
+
+<h2>Output:</h2>
+Build target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=796 RO-data=32 RW-data=4 ZI-data=1164  
+FromELF: creating hex file...
+"App.axf" - 0 Error(s), 0 Warning(s).
+"fm" @fmsettings.txt
+Flash Magic Version 5.82.2238
+8051/XA Driver Version 2.78.2196
+ARM UART Driver Version 2.18.2198
+ARM Cortex UART Driver Version 1.46.2238
+ARM Ethernet Driver Version 1.09.2196
+ARM CAN Driver Version 1.09.2198
+(C) Embedded Systems Academy 2000-2011 All rights reserved
+NON PRODUCTION USE ONLY
+Connection failed: comms error
+"fm" @fmsettings.txt
+Flash Magic Version 5.82.2238
+8051/XA Driver Version 2.78.2196
+ARM UART Driver Version 2.18.2198
+ARM Cortex UART Driver Version 1.46.2238
+ARM Ethernet Driver Version 1.09.2196
+ARM CAN Driver Version 1.09.2198
+(C) Embedded Systems Academy 2000-2011 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Clean started: Project: 'App'
+   deleting intermediate output files for target 'Sample'

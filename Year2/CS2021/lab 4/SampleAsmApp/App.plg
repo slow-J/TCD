@@ -1,0 +1,336 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+U:\2nd Year\Microprocessors\lab 4\SampleAsmApp\App.uvproj
+Project File Date:  03/23/2018
+
+<h2>Output:</h2>
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1192 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1192 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1196 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1200 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1196 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1200 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1200 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1200 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1200 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1200 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1184 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1168 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1172 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1172 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1172 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1172 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1176 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1176 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1176 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1172 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1172 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1184 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1184 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1192 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1184 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1184 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
+Rebuild target 'Sample'
+assembling App.s...
+linking...
+Program Size: Code=1184 RO-data=32 RW-data=196 ZI-data=1164  
+FromELF: creating hex file...
+".\App.axf" - 0 Errors, 0 Warning(s).
+"C:\Program Files (x86)\Flash Magic\FM.EXE" @fmsettings.txt
+Flash Magic Version 9.51.3993
+8051/XA Driver Version 3.50.3965
+ARM UART Driver Version 5.00.3965
+ARM Cortex UART Driver Version 7.01.3976
+ARM Ethernet Driver Version 2.21.3980
+ARM Cortex Ethernet Driver Version 2.60.3885
+ARM CAN Driver Version 2.25.3660
+(C) Embedded Systems Academy 2000-2015 All rights reserved
+NON PRODUCTION USE ONLY
+Connected
+Device selected
+Erase complete (USED)
+Hex file programming complete (App.hex)
+Verify passed (App.hex)
