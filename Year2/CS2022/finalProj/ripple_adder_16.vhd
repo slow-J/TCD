@@ -33,8 +33,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity ripple_adder_16 is
     Port(
-			A, B : in STD_LOGIC_VECTOR(15 downto 0);
-			Cin : STD_LOGIC;
+			inV0, inV1 : in STD_LOGIC_VECTOR(15 downto 0);
+			Cin : in STD_LOGIC;
 			Cout, V_out : out STD_LOGIC;
 			G_out : out STD_LOGIC_VECTOR(15 downto 0)
 		);
@@ -44,7 +44,7 @@ architecture Behavioral of ripple_adder_16 is
 
 Component full_add
 		Port(
-			X, Y, Cin : in STD_LOGIC;
+			in0, in1, Cin : in STD_LOGIC;
 			Cout, S : out STD_LOGIC
 			);
 	End Component;
@@ -54,128 +54,128 @@ Component full_add
 
 begin
 	full_adder_0: full_add PORT MAP(
-		X => A(0),
-		Y => B(0),
+		in0 => inV0(0),
+		in1 => inV1(0),
 		Cin => Cin,
 		Cout => C0,
 		S => G_out(0)
 	);
 	
 	full_adder_1: full_add PORT MAP(
-		X => A(1),
-		Y => B(1),
+		in0 => inV0(1),
+		in1 => inV1(1),
 		Cin => C0,
 		Cout => C1,
 		S => G_out(1)
 	);
 	
 	full_adder_2: full_add PORT MAP(
-		X => A(2),
-		Y => B(2),
+		in0 => inV0(2),
+		in1 => inV1(2),
 		Cin => C1,
 		Cout => C2,
 		S => G_out(2)
 	);
 	
 	full_adder_3: full_add PORT MAP(
-		X => A(3),
-		Y => B(3),
+		in0 => inV0(3),
+		in1 => inV1(3),
 		Cin => C2,
 		Cout => C3,
 		S => G_out(3)
 	);
 	
 	full_adder_4: full_add PORT MAP(
-		X => A(4),
-		Y => B(4),
+		in0 => inV0(4),
+		in1 => inV1(4),
 		Cin => C3,
 		Cout => C4,
 		S => G_out(4)
 	);
 
 	full_adder_5: full_add PORT MAP(
-		X => A(5),
-		Y => B(5),
+		in0 => inV0(5),
+		in1 => inV1(5),
 		Cin => C4,
 		Cout => C5,
 		S => G_out(5)
 	);
 	
 	full_adder_6: full_add PORT MAP(
-		X => A(6),
-		Y => B(6),
+		in0 => inV0(6),
+		in1 => inV1(6),
 		Cin => C5,
 		Cout => C6,
 		S => G_out(6)
 	);
 	
 	full_adder_7: full_add PORT MAP(
-		X => A(7),
-		Y => B(7),
+		in0 => inV0(7),
+		in1 => inV1(7),
 		Cin => C6,
 		Cout => C7,
 		S => G_out(7)
 	);
 	
 	full_adder_8: full_add PORT MAP(
-		X => A(8),
-		Y => B(8),
+		in0 => inV0(8),
+		in1 => inV1(8),
 		Cin => C7,
 		Cout => C8,
 		S => G_out(8)
 	);
 	
 	full_adder_9: full_add PORT MAP(
-		X => A(9),
-		Y => B(9),
+		in0 => inV0(9),
+		in1 => inV1(9),
 		Cin => C8,
 		Cout => C9,
 		S => G_out(9)
 	);
 	
 	full_adder_10: full_add PORT MAP(
-		X => A(10),
-		Y => B(10),
+		in0 => inV0(10),
+		in1 => inV1(10),
 		Cin => C9,
 		Cout => C10,
 		S => G_out(10)
 	);
 	
 	full_adder_11: full_add PORT MAP(
-		X => A(11),
-		Y => B(11),
+		in0 => inV0(11),
+		in1 => inV1(11),
 		Cin => C10,
 		Cout => C11,
 		S => G_out(11)
 	);
 	
 	full_adder_12: full_add PORT MAP(
-		X => A(12),
-		Y => B(12),
+		in0 => inV0(12),
+		in1 => inV1(12),
 		Cin => C11,
 		Cout => C12,
 		S => G_out(12)
 	);
 	
 	full_adder_13: full_add PORT MAP(
-		X => A(13),
-		Y => B(13),
+		in0 => inV0(13),
+		in1 => inV1(13),
 		Cin => C12,
 		Cout => C13,
 		S => G_out(13)
 	);
 	
 	full_adder_14: full_add PORT MAP(
-		X => A(14),
-		Y => B(14),
+		in0 => inV0(14),
+		in1 => inV1(14),
 		Cin => C13,
 		Cout => C14,
 		S => G_out(14)
 	);
 	
 	full_adder_15: full_add PORT MAP(
-		X => A(15),
-		Y => B(15),
+		in0 => inV0(15),
+		in1 => inV1(15),
 		Cin => C14,
 		Cout => C15,
 		S => G_out(15)

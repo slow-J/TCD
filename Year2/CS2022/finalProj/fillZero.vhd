@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 03/06/2018 11:23:21 AM
+-- Create Date: 03/27/2018 11:53:12 AM
 -- Design Name: 
--- Module Name: full_add - Behavioral
+-- Module Name: fillZero - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,22 +31,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity full_add is
-    Port(
-			in0, in1, Cin : in STD_LOGIC;
-			Cout, S : out STD_LOGIC
-		);
-end full_add;
+entity fillZero is
+  Port (
+        SB_in : in STD_LOGIC_VECTOR(2 downto 0);
+		zero_fill : out STD_LOGIC_VECTOR(15 downto 0)
+         );
+end fillZero;
 
-architecture Behavioral of full_add is
-
-signal S0, S1, S2 : STD_LOGIC;
-
+architecture Behavioral of fillZero is
+	signal ZeroFill : STD_LOGIC_VECTOR(15 downto 0);
 begin
-	S0 <= (in0 xor in1) after 1ns;
-	S1 <= (Cin and S0) after 1ns;
-	S2 <= (in0 and in1) after 1ns;
-	S <= (S0 xor Cin) after 1ns;
-	Cout <= (S1 or S2) after 1ns;
+    ZeroFill(2 downto 0) <= SB_in;
+    ZeroFill(15 downto 3) <= "0000000000000";
 
 end Behavioral;

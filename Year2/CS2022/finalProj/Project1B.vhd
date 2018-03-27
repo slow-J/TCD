@@ -35,26 +35,20 @@ entity Project1B is
     Port(
 	
 		data_in, constant_in : in STD_LOGIC_VECTOR(15 downto 0);
-		control_word : in STD_LOGIC_VECTOR(16 downto 0); --mbselect
+		control_word : in STD_LOGIC_VECTOR(17 downto 0); --mbselect
 		clk_sig : in STD_LOGIC;
+		
+        d_a0 : in  STD_LOGIC;
+        d_a1 : in  STD_LOGIC;
+        d_a2 : in  STD_LOGIC;
+		d_a3 : in STD_LOGIC;
+		data_load : in STD_LOGIC;
+		
 		data_out, address_out : out STD_LOGIC_VECTOR(15 downto 0);
 		N_out, Z_out, C_out, V_out : out STD_LOGIC;
-		data_load : in STD_LOGIC;
         bus_a_adr_out : out std_logic_vector(15 downto 0);
         bus_b_data_out : out std_logic_vector(15 downto 0);
         f_data_out : out std_logic_vector(15 downto 0);
-        src_s0_A : in  STD_LOGIC;
-        src_s1_A : in  STD_LOGIC;
-        src_s2_A : in  STD_LOGIC;
-		src_s3_A : in  STD_LOGIC;
-        src_s0_B : in  STD_LOGIC;
-        src_s1_B : in  STD_LOGIC;
-        src_s2_B : in  STD_LOGIC;
-		src_s3_B : in  STD_LOGIC;
-        d_A0 : in  STD_LOGIC;
-        d_A1 : in  STD_LOGIC;
-        d_A2 : in  STD_LOGIC;
-		d_A3 : in STD_LOGIC;
 
 	);
 end Project1B;
@@ -117,6 +111,7 @@ begin
 		data => mux_d_out,
 		out_data_a => reg_file_out_a,
 		out_data_b => reg_file_out_b
+	
 	);
 	
 	data_out <= mux_b_out;

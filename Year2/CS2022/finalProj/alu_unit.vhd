@@ -45,7 +45,7 @@ architecture Behavioral of alu_unit is
 	--ripple adder
 	Component ripple_adder_16
 		Port(
-			A, B : in STD_LOGIC_VECTOR(15 downto 0);
+			inV0, inV1 : in STD_LOGIC_VECTOR(15 downto 0);
 			Cin : in STD_LOGIC;
 			Cout, V_out : out STD_LOGIC;
 			G_out : out STD_LOGIC_VECTOR(15 downto 0)
@@ -81,8 +81,8 @@ architecture Behavioral of alu_unit is
 begin
 	--instantiation of components
 	ripple_adder: ripple_adder_16 PORT MAP(
-			A => a_in,
-			B => b_in,
+			inV0 => a_in,
+			inV1 => b_in,
 			Cin => G_select(0),
 			Cout => C,
 			V_out => V,
