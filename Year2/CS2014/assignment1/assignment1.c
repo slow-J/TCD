@@ -38,13 +38,16 @@ int main(int argc,char *argv[])
 {
 	int number=10;
 
-	if (argc==2) {
+	if (argc==2) 
+	{
 		int newnumber=atoi(argv[1]);
-		if (newnumber<=0) {
+		if (newnumber<=0) 
+		{
 			fprintf(stderr,"%d too small\n",newnumber);
 			usage(argv[0]);
 		}
-		if (newnumber>LIMIT) {
+		if (newnumber>LIMIT) 
+		{
 			fprintf(stderr,"%d too big\n",newnumber);
 			usage(argv[0]);
 		}
@@ -52,7 +55,8 @@ int main(int argc,char *argv[])
 	}
 
 
-	for (int i=0;i!=number;i++) {
+	for (int i=0;i!=number;i++) 
+	{
 		unsigned char byte=rndbyte();
 		printf("rnd%d: %02x\n",i,byte);
 	}
