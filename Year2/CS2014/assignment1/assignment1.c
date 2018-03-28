@@ -102,6 +102,6 @@ int main(int argc,char *argv[])
 		}
 		currentNo++;
 	}
-//	fclose(fp);
+	fclose(fp);
 	return(0);
 }
