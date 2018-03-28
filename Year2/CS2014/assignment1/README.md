@@ -1,2 +1,2 @@
-gcc -o "executableName"
+gcc -o "executableName"  
 ./"executableName" <number of lists> "outputName.txt"
