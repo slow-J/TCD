@@ -12,7 +12,8 @@ import java.util.Arrays;
  *  Test class for Collinear.java
  *
  *  @author  
- *  @version 03/10/16 17:10:35
+ *  @version 03/10/16 17:10:35#
+ 
  */
 @RunWith(JUnit4.class)
 public class CollinearTest
@@ -70,9 +71,36 @@ public class CollinearTest
         assertEquals("countCollinear(" + Arrays.toString(a1) + "," + Arrays.toString(a2) + "," + Arrays.toString(a3) + ")",     expectedResult, Collinear.countCollinear(a1, a2, a3));
         assertEquals("countCollinearFast(" + Arrays.toString(a1) + "," + Arrays.toString(a2) + "," + Arrays.toString(a3) + ")", expectedResult, Collinear.countCollinearFast(a1, a2, a3));
     }
+    
+    @Test
+    public void testCollinear()
+    {
+    	int[] a3 = { 5, 0 };       int[] a2 = { 5 , 9};       int[] a1 = { 10, 15, 18};
 
+        int expectedResult = 2;
 
-    // TODO: add more tests here. Each line of code and ech decision in Collinear.java should
+        assertEquals("countCollinear(" + Arrays.toString(a1) + "," + Arrays.toString(a2) + "," + Arrays.toString(a3) + ")",     expectedResult, Collinear.countCollinear(a1, a2, a3));
+    
+    }
+    
+    @Test
+    public void testCollinearFast()
+    {
+    	int[] a3 = { 5, 0};       int[] a2 = { 5 , 9};       int[] a1 = { 10, 15, 18 };
+
+        int expectedResult = 2;
+
+        assertEquals("countCollinearFast(" + Arrays.toString(a1) + "," + Arrays.toString(a2) + "," + Arrays.toString(a3) + ")", expectedResult, Collinear.countCollinearFast(a1, a2, a3));
+    }
+    
+    @Test
+    public void testSort()
+    {
+    	int[] a = { 5, 0, 2, 312, 311, 4, 33};    
+
+       Collinear.sort(a);
+    }
+    // TODO: add more tests here. Each line of code and each decision in Collinear.java should
     // be executed at least once from at least one test.
 
     // ----------------------------------------------------------
@@ -86,7 +114,68 @@ public class CollinearTest
      */
      public static void main(String[] args)
      {
-       //TODO: implement this method
+    	/*
+    	 In in1001 = new In("r01000-1.txt");
+    	 int in1001s[] = in1001.readAllInts(); 	 
+    	 In in1002 = new In("r01000-2.txt");
+    	 int in1002s[] = in1002.readAllInts();
+    	 In in1003 = new In("r01000-3.txt");
+    	 int in1003s[] = in1003.readAllInts();
+    	 
+    	 Stopwatch stopwatch = new Stopwatch();
+    	 Collinear.countCollinear(in1001s, in1002s, in1003s);
+    	 StdOut.println("1000 numbers took " + stopwatch.elapsedTime() + " seconds to run countCollinear");
+    	 
+    	 stopwatch = new Stopwatch();
+    	 Collinear.countCollinearFast(in1001s, in1002s, in1003s);
+    	 StdOut.println("1000 numbers took " + stopwatch.elapsedTime() + " seconds to run countCollinearFast");
+    	 
+    	 In in2001 = new In("r02000-1.txt");
+    	 int in2001s[] = in2001.readAllInts();    	 
+    	 In in2002 = new In("r02000-2.txt");
+    	 int in2002s[] = in2002.readAllInts();    	 
+    	 In in2003 = new In("r02000-3.txt");
+    	 int in2003s[] = in2003.readAllInts();
+    	 
+    	 stopwatch = new Stopwatch();
+    	 Collinear.countCollinear(in2001s, in2002s, in2003s);
+    	 StdOut.println("2000 numbers took " + stopwatch.elapsedTime() + " seconds to run countCollinear");
+    	 
+    	 stopwatch = new Stopwatch();
+    	 Collinear.countCollinearFast(in2001s, in2002s, in2003s);
+    	 StdOut.println("2000 numbers took " + stopwatch.elapsedTime() + " seconds to run countCollinearFast");
+    	 
+    	 In in4001 = new In("r04000-1.txt");
+    	 int in4001s[] = in4001.readAllInts();    	 
+    	 In in4002 = new In("r04000-2.txt");
+    	 int in4002s[] = in4002.readAllInts();    	 
+    	 In in4003 = new In("r04000-3.txt");
+    	 int in4003s[] = in4003.readAllInts();
+    	 
+    	 stopwatch = new Stopwatch();
+    	 Collinear.countCollinear(in4001s, in4002s, in4003s);
+    	 StdOut.println("4000 numbers took " + stopwatch.elapsedTime() + " seconds to run countCollinear");
+    	 
+    	 stopwatch = new Stopwatch();
+    	 Collinear.countCollinearFast(in4001s, in4002s, in4003s);
+    	 StdOut.println("4000 numbers took " + stopwatch.elapsedTime() + " seconds to run countCollinearFast");
+    	
+    	 In in5001 = new In("r05000-1.txt");
+    	 int in5001s[] = in5001.readAllInts();    	 
+    	 In in5002 = new In("r05000-2.txt");
+    	 int in5002s[] = in5002.readAllInts();    	 
+    	 In in5003 = new In("r05000-3.txt");
+    	 int in5003s[] = in5003.readAllInts();
+    	 
+    	 stopwatch = new Stopwatch();
+    	 Collinear.countCollinear(in5001s, in5002s, in5003s);
+    	 StdOut.println("5000 numbers took " + stopwatch.elapsedTime() + " seconds to run countCollinear");
+    	 
+    	 stopwatch = new Stopwatch();
+    	 Collinear.countCollinearFast(in5001s, in5002s, in5003s);
+    	 StdOut.println("5000 numbers took " + stopwatch.elapsedTime() + " seconds to run countCollinearFast");
+    	 
+    	*/
      }
 
 }
