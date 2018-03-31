@@ -36,72 +36,72 @@
 
 void usage(char *progname)
 {
-	fprintf(stderr,"Print some random numbers from /dev/random.\n");
-	fprintf(stderr,"Options:\n");
-	fprintf(stderr,"\t%s <number> where number is the number of times to print min: 0, max: %d]\n",progname,LIMIT);
-	exit(-1);
+  fprintf(stderr,"Print some random numbers from /dev/random.\n");
+  fprintf(stderr,"Options:\n");
+  fprintf(stderr,"\t%s <number> where number is the number of times to print min: 0, max: %d]\n",progname,LIMIT);
+  exit(-1);
 }
 
 unsigned char rndbyte()
 {
-	unsigned long int s;
-	syscall(SYS_getrandom, &s, sizeof(unsigned long int), 0);
-	unsigned char byte=(s>>16)%256;
-	return(byte);
+  unsigned long int s;
+  syscall(SYS_getrandom, &s, sizeof(unsigned long int), 0);
+  unsigned char byte=(s>>16)%256;
+  return(byte);
 }
 
 int main(int argc,char *argv[])
 {
-	int currentNo=0;
-	int finalNo=0;
-	FILE *fp = NULL;
-	if (argc==3) 
-	{	
-		char *ProgFile;
-		ProgFile = argv[2];
-		fp = fopen(ProgFile, "w");
-		if (fp==NULL)
-		{
-			fprintf(stderr,"error with file");
-		}
-		int newnumber = atoi(argv[1]);
-		if (newnumber<=0)
-		{
-			fprintf(stderr,"%d too small\n",newnumber);
-			usage(argv[0]);
-		}
-		if (newnumber>LIMIT)
-		{
-			fprintf(stderr,"%d too big\n",newnumber);
-			usage(argv[0]);
-		}
-		finalNo=newnumber;
-	}
-	while(currentNo<finalNo)
-	{
-		unsigned char randomNo=rndbyte();
-				
-		fprintf(fp, "%d,%02x",currentNo, randomNo);
-		int i;
-		for (i=0; i<(int)randomNo; i++)
-		{	
-			if(i%8==0)
-			{
-				fprintf(fp, "\n");
-			}
-			if(i==randomNo-1)
-			{
-				unsigned char byte=rndbyte();
-				fprintf(fp, "%02x\n\n", byte);
-			}
-			else
-			{	  
-				unsigned char byte=rndbyte();
-				fprintf(fp, "%02x,", byte);
-			}
-		}
-		currentNo++;
-	}
-	fclose(fp);
-	return(0);
+  int currentNo=0;
+  int finalNo=0;
+  FILE *fp = NULL;
+  if (argc==3) 
+  {  
+    char *ProgFile;
+    ProgFile = argv[2];
+    fp = fopen(ProgFile, "w");
+    if (fp==NULL)
+    {
+      fprintf(stderr,"error with file");
+    }
+    int newnumber = atoi(argv[1]);
+    if (newnumber<=0)
+    {
+      fprintf(stderr,"%d too small\n",newnumber);
+      usage(argv[0]);
+    }
+    if (newnumber>LIMIT)
+    {
+      fprintf(stderr,"%d too big\n",newnumber);
+      usage(argv[0]);
+    }
+    finalNo=newnumber;
+  }
+  while(currentNo<finalNo)
+  {
+    unsigned char randomNo=rndbyte();
+        
+    fprintf(fp, "%d,%02x",currentNo, randomNo);
+    int i;
+    for (i=0; i<(int)randomNo; i++)
+    {  
+      if(i%8==0)
+      {
+        fprintf(fp, "\n");
+      }
+      if(i==randomNo-1)
+      {
+        unsigned char byte=rndbyte();
+        fprintf(fp, "%02x\n\n", byte);
+      }
+      else
+      {    
+        unsigned char byte=rndbyte();
+        fprintf(fp, "%02x,", byte);
+      }
+    }
+    currentNo++;
+  }
+  fclose(fp);
+  return(0);
 }
