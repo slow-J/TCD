@@ -33,16 +33,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity mux_2_1 is
     Port ( 
-            I0, S0, S1 : in STD_LOGIC;
-			Z : out STD_LOGIC
+    	I0, S0, S1 : in STD_LOGIC;
+	Z : out STD_LOGIC
           );
 end mux_2_1;
 
 architecture Behavioral of mux_2_1 is
 
 begin
-    Z <= 	S0 after 1ns when I0= '1' else
-				S1 after 1ns when I0 = '0' else
-				'0' after 1ns;
+    Z <= 	S0 after 1ns when I0= '0' else
+		S1 after 1ns when I0 = '1' else
+		'0' after 1ns;
 
 end Behavioral;
