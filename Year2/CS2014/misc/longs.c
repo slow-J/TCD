@@ -9,4 +9,5 @@ int main()
   printf("whats your unsigned long, and long: ");
   scanf("%lu %ld", &longU, &longD);
   printf("%lu %ld\n", longU, longD);
+  return(0);
 }
