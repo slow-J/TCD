@@ -21,9 +21,9 @@ int main()
 {
   int x,y;
   int small, big;
-  printf("Two integers: ");
+  puts("Give two integers: ");
   scanf("%d %d", &x, &y);
   min_max(x, y, &small, &big);
-  printf("%d <= %d", small, big);
+  printf("%d <= %d\n", small, big);
   return(0);
 }
