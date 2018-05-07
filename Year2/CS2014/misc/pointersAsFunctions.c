@@ -1,4 +1,3 @@
-//pointers as function parameters
 
 #include <stdio.h>
 #include <stdlib.h>
