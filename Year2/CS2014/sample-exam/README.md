@@ -13,10 +13,10 @@ the canonical URL for this is
 - [Makefile](Makefile) - to build the sample answer code and HTML (there's a clean target too)
 - [cs2014-exam-2018-sample.pdf](./cs2014-exam-2018-sample.pdf) - the sample paper
 - [dnsparse.c](./dnsparse.c) - code for question 1
-- [mainfsize.c](./mainfsize.c) - code for question 2
+- [mainfsize.c](./q2/mainfsize.c) - code for question 2
 - [mainfsize_pp.cpp](./mainfsize_pp.cpp) - code for question 2
-- [fsize.c](./fsize.c) - code for question 2
-- [fsize.h](./fsize.h) - code for question 2
+- [fsize.c](./q2/fsize.c) - code for question 2
+- [fsize.h](./q2/fsize.h) - code for question 2
 - [badcat.c](./badcat.c) - code for question 3
 - [middlingbad.c](./middlingbad.c) - code for question 3 with minimal improvement
 - [lessbadcat.c](./lessbadcat.c) - code for question 3 with more improvement
