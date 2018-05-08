@@ -1,4 +1,5 @@
 # -*- Makefile -*-
+# easiest way to explain in exam
 
 all: mainfsize
 
