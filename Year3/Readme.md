@@ -1,4 +1,4 @@
-    Junior Sophister(SF)
+    Junior Sophister(JS)
     CS3011 - Symbolic Programming
     CS3012 - Software Engineering
     CS3013 - Software Engineering Group Project
