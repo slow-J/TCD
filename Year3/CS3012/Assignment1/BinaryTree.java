@@ -10,6 +10,23 @@
 
 public class BinaryTree<Key extends Comparable<Key>, Value>
 {
+  public Node lowestCommonAncestor(Node a, Node x, Node y)
+  {
+    //pass in root for Node a
+    
+    // If both n1 and n2 are smaller than root, then LCA lies in left
+    if (a.key.compareTo(x.key) > 0 && a.key.compareTo(y.key) > 0)
+      return lowestCommonAncestor(a.left, x, y);
+    if (a.key.compareTo(x.key) < 0 && a.key.compareTo(y.key) < 0)
+      return lowestCommonAncestor(a.right, x, y); // If both n1 and n2 are
+                                                  // greater than root, then LCA lies in right
+
+    return a;
+  }
+  
+  
+  
+  
   private Node root; // root of BST
 
   /**
