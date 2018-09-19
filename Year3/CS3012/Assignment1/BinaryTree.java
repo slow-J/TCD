@@ -13,18 +13,21 @@ public class BinaryTree<Key extends Comparable<Key>, Value>
   public Node lowestCommonAncestor(Node a, Node x, Node y)
   {
     //pass in root for Node a
+    if (a == null || x == null || y == null) 
+      return null;
     
-    // If both n1 and n2 are smaller than root, then LCA lies in left
+    if (a == x || a == y)
+      return root;
+    
+    // If both x and y are smaller than root, then LCA lies in left
     if (a.key.compareTo(x.key) > 0 && a.key.compareTo(y.key) > 0)
       return lowestCommonAncestor(a.left, x, y);
+    // If both x and y are greater than root, then LCA lies in right
     if (a.key.compareTo(x.key) < 0 && a.key.compareTo(y.key) < 0)
-      return lowestCommonAncestor(a.right, x, y); // If both n1 and n2 are
-                                                  // greater than root, then LCA lies in right
+      return lowestCommonAncestor(a.right, x, y); 
 
     return a;
   }
-  
-  
   
   
   private Node root; // root of BST
@@ -105,7 +108,10 @@ public class BinaryTree<Key extends Comparable<Key>, Value>
     else
       return x.val;
   }
-
+  public Node getRoot()
+  {
+    return this.root;
+  }
   /**
    * Insert key-value pair into BST. If key already exists, update with new
    * value.
@@ -240,7 +246,12 @@ public class BinaryTree<Key extends Comparable<Key>, Value>
    *
    * @return a multi-line string with the pretty ascii picture of the tree.
    */
-
+  public String getNodeInfo(Node a)
+  {
+    String ret="\n";
+    ret +="key: "+ a.key+"\nvalue: "+ a.val+"\nsize of subtree: "+a.N;
+    return ret;    
+  }
   public String prettyPrintKeys()
   {
     if (isEmpty())
@@ -266,13 +277,9 @@ public class BinaryTree<Key extends Comparable<Key>, Value>
   }
 
   /**
-   * Deteles a key from a tree (if the key is in the tree). Note that this
-   * method works symmetrically from the Hibbard deletion: If the node to be
-   * deleted has two child nodes, then it needs to be replaced with its
-   * predecessor (not its successor) node.
+   * Deletes a key from a tree (if the key is in the tree).
    *
-   * @param key
-   *          the key to delete
+   * @param key key to delete
    */
 
   public void delete(Key k)
