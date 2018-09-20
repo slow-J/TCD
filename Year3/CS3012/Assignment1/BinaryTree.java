@@ -10,22 +10,31 @@
 
 public class BinaryTree<Key extends Comparable<Key>, Value>
 {
-  public Node lowestCommonAncestor(Node a, Node x, Node y)
+  public Node lowestCommonAncestor(Key x, Key y)
   {
+    Node ret = root;
     //pass in root for Node a
-    if (a == null || x == null || y == null) 
+    if (x == null || y == null) 
       return null;
     
-    if (a == x || a == y)
-      return root;
+    if (ret == x || ret == y)
+      return ret;
     
     // If both x and y are smaller than root, then LCA lies in left
-    if (a.key.compareTo(x.key) > 0 && a.key.compareTo(y.key) > 0)
-      return lowestCommonAncestor(a.left, x, y);
+    if (ret.key.compareTo(x) > 0 && ret.key.compareTo(y) > 0)
+      ret= lowestCommonAncestor(ret.left, x, y);
     // If both x and y are greater than root, then LCA lies in right
-    if (a.key.compareTo(x.key) < 0 && a.key.compareTo(y.key) < 0)
-      return lowestCommonAncestor(a.right, x, y); 
-
+    if (ret.key.compareTo(x) < 0 && ret.key.compareTo(y) < 0)
+      ret= lowestCommonAncestor(ret.right, x, y);
+    
+    return ret;
+  }
+  private Node lowestCommonAncestor(Node a, Key x, Key y)
+  {
+    if (a.key.compareTo(x) > 0 && a.key.compareTo(y) > 0)
+      return lowestCommonAncestor(a.left, x, y);
+    if (a.key.compareTo(x) < 0 && a.key.compareTo(y) < 0)
+      return lowestCommonAncestor(a.right, x, y);
     return a;
   }
   
@@ -251,6 +260,10 @@ public class BinaryTree<Key extends Comparable<Key>, Value>
     String ret="\n";
     ret +="key: "+ a.key+"\nvalue: "+ a.val+"\nsize of subtree: "+a.N;
     return ret;    
+  }
+  public void printNodeName(Node a)
+  {
+    System.out.println(a.key+", "+ a.val);  
   }
   public String prettyPrintKeys()
   {

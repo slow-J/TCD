@@ -20,8 +20,10 @@ public class BinaryTreeTest
     bst.put(8, "T"); 
     bst.put(7, "P"); 
     bst.put(11, "Q");
-    System.out.println(bst.printKeysInOrder());
+    System.out.println(bst.prettyPrintKeys());
     System.out.println(bst.getNodeInfo(bst.getRoot()));
+    System.out.println();
+    bst.printNodeName(bst.lowestCommonAncestor(7,11));
   }
 
 }
