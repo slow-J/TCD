@@ -14,9 +14,9 @@
 
 using namespace std;        // cout
 
-//
-// fib: C++
-//
+							//
+							// fib: C++
+							//
 int fib(int n) {
 	int fi, fj, t;
 
