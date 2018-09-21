@@ -2,7 +2,7 @@
  *  Binary Search Tree class.
  *  Adapted from BST.java
  *
- *  @version 1.1 20/09/18 
+ *  @version 1.2 21/09/18 
  *
  *  @author Jakub slowinski
  *
@@ -232,9 +232,19 @@ public class BinaryTree<Key extends Comparable<Key>, Value>
     ret +="key: "+ a.key+"\nvalue: "+ a.val+"\nsize of subtree: "+a.N;
     return ret;    
   }
-  public void printNodeName(Node a)
+  public String getNodeKey(Node a)
   {
-    System.out.println(a.key+", "+ a.val);  
+    if(a.key==null)
+      return null;
+    String ret = a.key+"";
+    return ret;
+  }
+  public String getNodeVal(Node a)
+  {
+    if(a.val==null)
+      return null;
+    String ret = a.val+"";
+    return ret;
   }
   public String prettyPrintKeys()
   {

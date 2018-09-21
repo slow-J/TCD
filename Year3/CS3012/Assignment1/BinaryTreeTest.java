@@ -11,19 +11,40 @@ public class BinaryTreeTest
     BinaryTree<Integer, Integer> bst = new BinaryTree<Integer, Integer>();
     assertEquals("Checking pretty printing of empty tree", true, bst.isEmpty());
   }
+  
   @Test
-  public void testLCA()
+  public void testLCA1()
   {
-    BinaryTree<Integer, String> bst = new BinaryTree<Integer, String>();
-    bst.put(5, "J"); 
-    bst.put(3, "S"); 
-    bst.put(8, "T"); 
-    bst.put(7, "P"); 
-    bst.put(11, "Q");
+    BinaryTree<Integer, Integer> bst = new BinaryTree<Integer, Integer>();
+    bst.put(5, 5); 
+    bst.put(3, 3); 
+    bst.put(8, 8); 
+    bst.put(7, 7); 
+    bst.put(11, 11);
     System.out.println(bst.prettyPrintKeys());
     System.out.println(bst.getNodeInfo(bst.getRoot()));
-    System.out.println();
-    bst.printNodeName(bst.lowestCommonAncestor(7,11));
+    assertEquals("Checking lca of keys 7 and 11", "8", bst.getNodeKey(bst.lowestCommonAncestor(7, 11)));
+    assertEquals("Checking lca of keys 11 and 7", "8", bst.getNodeKey(bst.lowestCommonAncestor(11, 7)));
+    assertEquals("Checking lca of keys 0 and null", "8", bst.getNodeKey(bst.lowestCommonAncestor(5, 0)));
   }
-
+  
+  @Test
+  public void testLCA2()
+  {
+    BinaryTree<Integer, String> bst = new BinaryTree<Integer, String>();
+    bst.put(1, "Mark"); 
+    bst.put(15, "Gideon"); 
+    bst.put(33, "Shane"); 
+    bst.put(7, "Tom"); 
+    bst.put(11, "Dylan");
+    bst.put(12, "Ian");
+    bst.put(20, "Fernando");
+    bst.put(25, "Cian");
+    System.out.println(bst.prettyPrintKeys());
+    System.out.println(bst.getNodeInfo(bst.getRoot()));
+    assertEquals("Checking lca of keys 20 and 25", "20", bst.getNodeKey(bst.lowestCommonAncestor(20, 25)));
+    assertEquals("Checking lca of keys 1 and 12", "1", bst.getNodeKey(bst.lowestCommonAncestor(1, 12)));
+    assertEquals("Checking lca of keys 11 and 25", "15", bst.getNodeKey(bst.lowestCommonAncestor(11, 25)));
+  }
+  
 }
