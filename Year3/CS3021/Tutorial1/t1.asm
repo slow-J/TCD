@@ -2,31 +2,33 @@
 .model flat, C                      ; 32 bit memory model
  option casemap:none                ; case sensitive
 
-data ; start of a data section
+data segment; start of a data section
 public g ; export variable g
 g DWORD 4 ; declare global variable g initialised to 4
+data ends
 .code ; start of a code section
 
 public	min							; make sure function name is exported
 
 min:	push	ebp
 		mov		ebp, esp			;
-		sub		esp, 4				; allocate space
-		move	eax, [ebp+8]		; eax = a
-		move	[esp-4], eax		; v = a
-		mov		eax, [ebp+12]		; eax = b
-		cmp		eax, [ebp-4]		; if(b < v)
+		mov		esi, [ebp+8]		; esi = a
+		mov		eax, esi			; eax = a
+		mov		esi, [ebp+12]		; esi = b
+		cmp		esi, eax			; if(b < v)
 		jge		min0
-		mov		[ebp-4], eax		; v = b
+		mov		eax, esi			; eax = b
 
-min0:	mov		eax, [epb+16]		; eax = c
-		cmp		eax, [ebp-4]		; if(c < v)
+min0:	mov		esi, [ebp+16]		; esi = c
+		cmp		esi, eax			; if(c < v)
 		jge		min1
-		mov		[ebp-4], eax		; v = c
+		mov		eax, esi			; eax = c
 
 min1:	mov		esp, ebp			; restore esp
 		pop		ebp					; restore previous ebp
-		ret							; return from function
+		ret		0					; return from function
+
+
 ;;;;;;;;;;;;;;;;;;;;
 public	p							; make sure function name is exported
 
@@ -41,9 +43,10 @@ p:		push	ebp
 		push	ebx
 		push	g					; global variable; may be wrong
 
+	
 		call	min
 
-		pop
+		add		esp, 4
 		pop		ebx
 		pop		esi
 		pop		ebp					; int l
@@ -52,34 +55,42 @@ p:		push	ebp
 		push	edi
 		push	eax					; result from min
 		
+		
 		call	min
 
 		mov		esp, ebp			; restore esp
 		pop		ebp					; restore previous ebp
-		ret
+		ret		0
 
 ;;;;;;;;;;;;;;;;;
 public	gcd							; make sure function name is exported
 
 gcd:	push	ebp
 		mov		ebp, esp			;
-		cmp		[ebp+12], 0	
+		mov		edi, 0
+		cmp		[ebp+12], edi	
 		je		gcd0
-		
-recursion:
-		mov eax, [ebp+8]    ; eax <-- 32-bit "a"
-		xor edx, edx        ; edx <-- upper 0 bits
-		idiv drgssddfgafd [ebp+12]; fix this;;;;;;;;;;;;;;;;;;;;;;;;
-		
 
-		call gcd           ; tail-recursive call
-		j fin
+		pop		ebx					; int a
+		pop		esi					; int b
 
+		xor		edx, edx			;remainder	
+		mov		eax, ebx		
+		mov		ecx, esi			; fix
+		idiv	ecx					;
+
+		push	edx
+		push	esi	
+
+		mov		esp, ebp			; restore esp
+		pop		ebp					; restore previous ebp
+		call gcd					;recursive
+		
 gcd0:	mov eax, [ebp+8]
 
-fin:	mov		esp, ebp			; restore esp
+		mov		esp, ebp			; restore esp
 		pop		ebp					; restore previous ebp
-		ret
+		ret		0
 	
 
 
