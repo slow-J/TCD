@@ -1,19 +1,19 @@
 /* */
 %{
-int allEvens = 0;
-int i;
+int openBracketCount = 0;
 %}
 
 %%
-"**"	{ printf("comment\n"); }
-[0-9]+	{ i = atoi(yytext); if(i%2==0){allEvens++;} }
-\n      {}
-.       {}
+"{"	    { openBracketCount++; }
+"}"	    { if (openBracketCount>0) { openBracketCount--; } }
+"**".*  {/*comment */} 
+[a-zA-Z]+	{ if(openBracketCount==0) { printf("%s", yytext); } }
+\n      { if(openBracketCount==0) { printf("\n", yytext); } }
+.       {if(openBracketCount==0) { printf("%s", yytext); } }
 %%
 
 int main()
 {
   yylex();
-  printf("%d\n",allEvens);
   return 0;
 }
