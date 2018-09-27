@@ -25,7 +25,6 @@ public class BinaryTreeTest
     System.out.println(bst.getNodeInfo(bst.getRoot()));
     assertEquals("Checking lca of keys 7 and 11", "8", bst.getNodeKey(bst.lowestCommonAncestor(7, 11)));
     assertEquals("Checking lca of keys 11 and 7", "8", bst.getNodeKey(bst.lowestCommonAncestor(11, 7)));
-    assertEquals("Checking lca of keys 0 and null", "8", bst.getNodeKey(bst.lowestCommonAncestor(5, 0)));
   }
   
   @Test
@@ -33,18 +32,25 @@ public class BinaryTreeTest
   {
     BinaryTree<Integer, String> bst = new BinaryTree<Integer, String>();
     bst.put(1, "Mark"); 
-    bst.put(15, "Gideon"); 
+    bst.put(15, "Gideon");
+    bst.put(40, "Isabelle"); 
     bst.put(33, "Shane"); 
-    bst.put(7, "Tom"); 
+    bst.put(7, "Tom");
+    bst.put(9, "Lorchan"); 
     bst.put(11, "Dylan");
+    bst.put(3, "Jade");
+    bst.put(5, "Yasmin"); 
+    bst.put(21, "Anna"); 
     bst.put(12, "Ian");
     bst.put(20, "Fernando");
     bst.put(25, "Cian");
     System.out.println(bst.prettyPrintKeys());
     System.out.println(bst.getNodeInfo(bst.getRoot()));
-    assertEquals("Checking lca of keys 20 and 25", "20", bst.getNodeKey(bst.lowestCommonAncestor(20, 25)));
+    assertEquals("Checking lca of keys 20 and 25", "21", bst.getNodeKey(bst.lowestCommonAncestor(20, 25)));
     assertEquals("Checking lca of keys 1 and 12", "1", bst.getNodeKey(bst.lowestCommonAncestor(1, 12)));
     assertEquals("Checking lca of keys 11 and 25", "15", bst.getNodeKey(bst.lowestCommonAncestor(11, 25)));
+    assertEquals("Checking lca of keys 3 and 40", "15", bst.getNodeKey(bst.lowestCommonAncestor(40, 3)));
+    assertEquals("Checking lca of keys 33 and 21", "33", bst.getNodeKey(bst.lowestCommonAncestor(33, 21)));
   }
   
 }

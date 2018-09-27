@@ -2,7 +2,7 @@
  *  Binary Search Tree class.
  *  Adapted from BST.java
  *
- *  @version 1.2 21/09/18 
+ *  @version 1.3 27/09/18 
  *
  *  @author Jakub slowinski
  *
