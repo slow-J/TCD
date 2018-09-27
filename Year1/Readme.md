@@ -1,7 +1,7 @@
     Junior Fresh(JF)
-    CS1003 - Mathematics    
-    CS1013 - Programming Project
+    CS1003 - Mathematics   
     CS1010 - Introduction to Programming
+    CS1013 - Programming Project   
     CS1021 - Introduction to Computing I
     CS1022 - Introduction to Computing II
     CS1025 - Electrotechnology
