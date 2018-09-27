@@ -1,4 +1,3 @@
-Work in progress  
 Assignment 2. 
 
 Write a flex program comments.l which removes comments from a slightly odd 
