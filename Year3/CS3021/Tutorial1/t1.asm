@@ -34,30 +34,23 @@ public	p							; make sure function name is exported
 
 p:		push	ebp
 		mov		ebp, esp			;
-
-		pop		ebx					; int i
-		pop		esi					; int j
-		pop		edi					; int k
 		
-		push	esi
-		push	ebx
-		push	g					; global variable; may be wrong
+		push	[ebp+12]
+		push	[ebp+8]
+		push	g					; global variable
 
 	
 		call	min
 
-		add		esp, 4
-		pop		ebx
-		pop		esi
-		pop		ebp					; int l
+		add		esp, 12				; remove from stack
 	
-		push	ebp					; maybe can skip this fix this later
-		push	edi
+		push	[ebp+20]
+		push	[ebp+16]
 		push	eax					; result from min
 		
-		
 		call	min
 
+		add		esp, 12
 		mov		esp, ebp			; restore esp
 		pop		ebp					; restore previous ebp
 		ret		0
@@ -68,27 +61,26 @@ public	gcd							; make sure function name is exported
 gcd:	push	ebp
 		mov		ebp, esp			;
 		mov		edi, 0
+
 		cmp		[ebp+12], edi	
 		je		gcd0
 
-		pop		ebx					; int a
-		pop		esi					; int b
-
 		xor		edx, edx			;remainder	
-		mov		eax, ebx		
-		mov		ecx, esi			; fix
+		mov		eax, [ebp+8]		
+		mov		ecx, [ebp+12]		; fix
 		idiv	ecx					;
 
 		push	edx
-		push	esi	
+		push	[ebp+12]	
 
-		mov		esp, ebp			; restore esp
-		pop		ebp					; restore previous ebp
-		call gcd					;recursive
+		call gcd					; recursive
 		
+		add		esp, 8				; pop off stack
+		jmp		gcd1
+
 gcd0:	mov eax, [ebp+8]
 
-		mov		esp, ebp			; restore esp
+gcd1:	mov		esp, ebp			; restore esp
 		pop		ebp					; restore previous ebp
 		ret		0
 	
