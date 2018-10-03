@@ -76,4 +76,11 @@ public class BinaryTreeTest
     assertEquals("Checking lca of keys 4 and 23", "4", bst.getNodeKey(bst.lowestCommonAncestor(4, 23)));
   }
   
+  @Test
+  public void testDAG1()
+  {
+    DirectedAcyclicGraph dag = new DirectedAcyclicGraph();
+  }
+  
+  
 }
