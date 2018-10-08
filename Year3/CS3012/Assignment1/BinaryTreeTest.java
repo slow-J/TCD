@@ -79,7 +79,16 @@ public class BinaryTreeTest
   @Test
   public void testDAG1()
   {
-    DirectedAcyclicGraph dag = new DirectedAcyclicGraph();
+    DirectedAcyclicGraph dag = new DirectedAcyclicGraph(10);
+    dag.addEdge(0, 2);
+    dag.addEdge(1, 13);
+    dag.addEdge(2, 199);
+    dag.addEdge(3, 13);
+    dag.addEdge(5, 13);
+    dag.addEdge(4, 1);
+    dag.addEdge(6, 21);
+    dag.addEdge(7, 1000);
+    System.out.println(bst.prettyPrint());
   }
   
   

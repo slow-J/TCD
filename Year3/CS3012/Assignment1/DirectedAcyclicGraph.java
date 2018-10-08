@@ -1,8 +1,10 @@
+//@version 1.1 08/10/18 
 import java.util.LinkedList;
 
 public class DirectedAcyclicGraph
 {
-  private Node root; // root of BST
+  private int totalVertices;
+  private int edges;
 
   /**
    * Private node class.
@@ -19,9 +21,10 @@ public class DirectedAcyclicGraph
     }
   }
 
-  private class Graph
+  public DirectedAcyclicGraph(int totalVertices)
   {
-    private int graphKey;
+    this.totalVertices = totalVertices;
+    this.edges = 0;
     private LinkedList<Node> successors[];
     public Graph(int a)
     {
@@ -31,13 +34,23 @@ public class DirectedAcyclicGraph
         successors[i] = new LinkedList<Node>(); 
       }
 
-     /* public void addEdge(int newKey, int key, int weight)
+     
+    }
+  }
+  /* public void addEdge(int newKey, int key, int weight)
       {
         //successors node = new Node(key, weight);
         //adj[newKey].add(node);// Add v to u's list
       }
-      */
-    }
+   */
+  //pubic static prettyPrint()
+  public static int getNoOFVertices()
+  {
+    return totalVertices;
+  }
+  public static int getNoOFEdges()
+  {
+    return edges;
   }
 
 }
