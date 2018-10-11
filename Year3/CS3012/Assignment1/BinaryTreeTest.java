@@ -88,7 +88,7 @@ public class BinaryTreeTest
     dag.addEdge(4, 1);
     dag.addEdge(6, 21);
     dag.addEdge(7, 1000);
-    System.out.println(bst.prettyPrint());
+    //System.out.println(dag.prettyPrint());
   }
   
   

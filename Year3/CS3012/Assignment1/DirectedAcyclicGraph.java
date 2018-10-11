@@ -1,4 +1,4 @@
-//@version 1.1 08/10/18 
+//@version 1.2 11/10/18 
 import java.util.LinkedList;
 
 public class DirectedAcyclicGraph
@@ -6,36 +6,19 @@ public class DirectedAcyclicGraph
   private int totalVertices;
   private int edges;
 
-  /**
-   * Private node class.
-   */
-  private class Node 
-  {
-    private int key; // sorted by key
-    private int weight; // associated data
-
-    public Node(int key, int weight)
-    {
-      this.key = key;
-      this.weight = weight;
-    }
-  }
 
   public DirectedAcyclicGraph(int totalVertices)
   {
     this.totalVertices = totalVertices;
     this.edges = 0;
-    private LinkedList<Node> successors[];
-    public Graph(int a)
-    {
-      successors = new LinkedList[a]; 
-      for (int i=0; i<a; ++i)
-      {
-        successors[i] = new LinkedList<Node>(); 
-      }
+    LinkedList<Integer> successors[];
 
-     
+    successors = new LinkedList[totalVertices];
+    for (int i = 0; i < totalVertices; ++i)
+    {
+      successors[i] = new LinkedList<Integer>();
     }
+
   }
   /* public void addEdge(int newKey, int key, int weight)
       {
@@ -43,14 +26,20 @@ public class DirectedAcyclicGraph
         //adj[newKey].add(node);// Add v to u's list
       }
    */
-  //pubic static prettyPrint()
-  public static int getNoOFVertices()
+  public static void prettyPrint(){}
+  public int getNoOFVertices()
   {
-    return totalVertices;
+    return this.totalVertices;
   }
-  public static int getNoOFEdges()
+  public int getNoOFEdges()
   {
-    return edges;
+    return this.edges;
+  }
+  private boolean validateVertex(int vertice)
+  {
+    if (vertice < 0 || vertice >= this.totalVertices)
+      return false;
+    return true;
   }
 
 }
