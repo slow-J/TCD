@@ -4,42 +4,72 @@ import java.util.LinkedList;
 public class DirectedAcyclicGraph
 {
   private int totalVertices;
-  private int edges;
-
-
+  private int totalEdges;
+  LinkedList<Integer> successors[];
+  private int[] indegree;
+  
   public DirectedAcyclicGraph(int totalVertices)
   {
     this.totalVertices = totalVertices;
-    this.edges = 0;
-    LinkedList<Integer> successors[];
-
+    this.totalEdges = 0;
     successors = new LinkedList[totalVertices];
+    indegree = new int[totalVertices];
+    
     for (int i = 0; i < totalVertices; ++i)
     {
       successors[i] = new LinkedList<Integer>();
     }
 
   }
-  /* public void addEdge(int newKey, int key, int weight)
-      {
-        //successors node = new Node(key, weight);
-        //adj[newKey].add(node);// Add v to u's list
-      }
-   */
-  public static void prettyPrint(){}
+  
   public int getNoOFVertices()
   {
     return this.totalVertices;
   }
-  public int getNoOFEdges()
+  public int getNoOfEdges()
   {
-    return this.edges;
+    return this.totalEdges;
   }
-  private boolean validateVertex(int vertice)
+  private void setEdges(int a)
   {
-    if (vertice < 0 || vertice >= this.totalVertices)
+    this.totalEdges=a;
+  }
+  private boolean validateVertex(int vertex)
+  {
+    if (vertex < 0 || vertex >= this.totalVertices)
       return false;
     return true;
+  }
+  
+// from a -> z  
+  public void addEdge(int a, int z) 
+  {
+    if(validateVertex(a) && validateVertex(z))
+    {
+      successors[a].add(z);
+      indegree[z]++;
+      setEdges(getNoOfEdges()+1);
+    }
+    else
+    {
+      throw new IllegalArgumentException("Error with validating vertex");
+    }
+  }
+
+  public String toString()
+  {
+    StringBuilder stringB = new StringBuilder();
+    stringB.append(totalVertices + " vertices, " + totalEdges + " edges \n");
+    for (int v = 0; v < totalVertices; v++)
+    {
+      stringB.append(String.format("%d: ", v));
+      for (int w : successors[v])
+      {
+        stringB.append(String.format("%d ", w));
+      }
+      stringB.append("\n");
+    }
+    return stringB.toString();
   }
 
 }

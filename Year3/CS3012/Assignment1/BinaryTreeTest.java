@@ -21,7 +21,7 @@ public class BinaryTreeTest
     bst.put(8, 8); 
     bst.put(7, 7); 
     bst.put(11, 11);
-    System.out.println(bst.prettyPrintKeys());
+    //System.out.println(bst.prettyPrintKeys());
     //System.out.println(bst.getNodeInfo(bst.getRoot()));
     assertEquals("Checking lca of keys 7 and 11", "8", bst.getNodeKey(bst.lowestCommonAncestor(7, 11)));
     assertEquals("Checking lca of keys 11 and 7", "8", bst.getNodeKey(bst.lowestCommonAncestor(11, 7)));
@@ -44,7 +44,7 @@ public class BinaryTreeTest
     bst.put(12, "Ian");
     bst.put(20, "Fernando");
     bst.put(25, "Cian");
-    System.out.println(bst.prettyPrintKeys());
+    //System.out.println(bst.prettyPrintKeys());
     //System.out.println(bst.getNodeInfo(bst.getRoot()));
     assertEquals("Checking lca of keys 20 and 25", "21", bst.getNodeKey(bst.lowestCommonAncestor(20, 25)));
     assertEquals("Checking lca of keys 1 and 12", "1", bst.getNodeKey(bst.lowestCommonAncestor(1, 12)));
@@ -68,7 +68,7 @@ public class BinaryTreeTest
     bst.put(132, true);
     bst.put(15, true);
     bst.put(20, true);
-    System.out.println(bst.prettyPrintKeys());
+    //System.out.println(bst.prettyPrintKeys());
     //System.out.println(bst.getNodeInfo(bst.getRoot()));
     assertEquals("Checking lca of keys 4 and 61", "60", bst.getNodeKey(bst.lowestCommonAncestor(4, 61)));
     assertEquals("Checking lca of keys 1 and 32", "1", bst.getNodeKey(bst.lowestCommonAncestor(1, 32)));
@@ -80,15 +80,15 @@ public class BinaryTreeTest
   public void testDAG1()
   {
     DirectedAcyclicGraph dag = new DirectedAcyclicGraph(10);
-    dag.addEdge(0, 2);
-    dag.addEdge(1, 13);
-    dag.addEdge(2, 199);
-    dag.addEdge(3, 13);
-    dag.addEdge(5, 13);
+    dag.addEdge(8, 9);
+    dag.addEdge(1, 8);
+    dag.addEdge(2, 4);
+    dag.addEdge(3, 4);
+    dag.addEdge(5, 0);
     dag.addEdge(4, 1);
-    dag.addEdge(6, 21);
-    dag.addEdge(7, 1000);
-    //System.out.println(dag.prettyPrint());
+    dag.addEdge(6, 1);
+    dag.addEdge(7, 0);
+    System.out.println(dag.toString());
   }
   
   
