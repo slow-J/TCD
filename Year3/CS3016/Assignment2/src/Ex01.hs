@@ -95,40 +95,36 @@ simp _ e = e  -- simplest case, Val, needs no special treatment
   -- (2) (Def v e1 e2) should simplify to just e2 in the following two cases:
     -- (2a) if there is mention of v in e2
     -- (2b) if any mention of v in e2 is inside another (Def v .. ..)
-{--
-uopSimp cons u (Val v) e | v == u  =  e
-uopSimp cons u e (Val v) | v == u  =  e
-uopSimp cons u e1 e2               =  cons e1 e2
-
-mulSimp (Val 1.0) e  =  e
-mulSimp e (Val 1.0)  =  e
-mulSimp e1 e2        =  Mul e1 e2
-
-simpOp opsimp e1 e2 
-    = let e1`=simp e1
-          e2`=simp e2
-    in opsimp e1` e2`
---}
 
 simpVar :: EDict -> Id -> Expr
 simpVar d v = case (find d v) of
-    (Just m)  ->  Val m
-    _         ->  Var v
+    (Just m)  ->  Val (m)
+    _         ->  Var (v)
 
 simpAdd :: EDict -> Expr -> Expr -> Expr
-simpAdd d (Val e1) (Val e2) = Val(e1+e2)
-simpAdd d e1 e2 = Add e1 e2
-simpAdd d (Val e1) (Val 0) = Val e1
-simpAdd d (Val 0) (Val e2) = Val e2
+simpAdd d (Val x) (Val y)  = Val (x+y)
+simpAdd d e1      (Val 0.0)  = e1
+simpAdd d (Val 0.0) e2       = e2
+simpAdd d e1      e2       = Add e1 e2
 
 simpSub :: EDict -> Expr -> Expr -> Expr
-simpSub d e1 e2 = Sub e1 e2
+simpSub d e1       (Val 0.0)  = e1
+simpSub d (Val e1) (Val e2) = Val (e1-e2)
+simpSub d e1       e2       = Sub e1 e2
 
 simpMul :: EDict -> Expr -> Expr -> Expr
-simpMul d e1 e2 = Mul e1 e2
+simpMul d e1        (Val 1.0) = e1
+simpMul d (Val 1.0) e2        = e2
+simpMul d (Val e1)  (Val e2)  = Val (e1*e2)
+simpMul d e1        e2        = Mul e1 e2
 
 simpDvd :: EDict -> Expr -> Expr -> Expr
-simpDvd d e1 e2 = Dvd e1 e2
+simpDvd d (Val e1) (Val 0.0) = Dvd (Val e1) (Val 0.0)
+simpDvd d (Val e1) (Val e2)  = Val (e1/e2)
+simpDvd d e1       (Val 1.0) = e1
+simpDvd d (Val e1) _         = Val 0.0
+simpDvd d e1       e2        = Dvd e1 e2
 
 simpDef :: EDict -> Id -> Expr -> Expr -> Expr
-simpDef d v e1 e2 = (Val 1e-99)
+simpDef d v (Val x) e2 = simp (define d v x) e2 
+simpDef d v e1      e2 = Def v e1 e2
