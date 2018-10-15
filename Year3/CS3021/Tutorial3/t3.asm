@@ -2,7 +2,7 @@
       add   r0, #4, r9
 min
 
-min:  add   r26, r0,  r1      ; v=c
+min:  add   r26, r0,  r1      ++++++++++++++++++++++; v=c
       sub   r27, r1,  r0(C)   ; b<v
       jge   min0
       xor   r0,  r0,  r0
