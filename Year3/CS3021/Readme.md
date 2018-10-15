@@ -1,1 +1,3 @@
-x86 assembly language
+Tutorial 1: 32 bit x86 assembly language
+Tutorial 2: 64 bit x86 assembly language
+Tutorial 3: RISC-I
