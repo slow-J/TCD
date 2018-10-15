@@ -91,5 +91,27 @@ public class BinaryTreeTest
     System.out.println(dag.toString());
   }
   
+  @Test
+  public void testDAG2()
+  {
+    DirectedAcyclicGraph dag = new DirectedAcyclicGraph(20);
+    dag.addEdge(1, 2);
+    dag.addEdge(1, 3);
+    dag.addEdge(2, 5);
+    dag.addEdge(3, 4);
+    dag.addEdge(5, 0);
+    dag.addEdge(4, 1);
+    dag.addEdge(6, 1);
+    dag.addEdge(7, 0);
+    dag.addEdge(5, 2);
+    dag.addEdge(7, 3);
+    dag.addEdge(8, 5);
+    dag.addEdge(9, 4);
+    dag.addEdge(12, 0);
+    dag.addEdge(14, 1);
+    dag.addEdge(20, 1);
+    dag.addEdge(19, 0);
+    System.out.println(dag.toString());
+  }
   
 }
