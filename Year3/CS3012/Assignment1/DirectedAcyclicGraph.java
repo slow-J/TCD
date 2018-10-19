@@ -112,10 +112,44 @@ public class DirectedAcyclicGraph
     }
     //new1.forEach(System.out::print);
     int[][] dist = new int[new1.size()][2];//[arrayIndex][dist to x dist[][0] or y dist[][1]]
-    for(int i=0; i<dist.length; i++)
+    boolean end = false;
+    boolean xFlag = false;
+    boolean yFlag = false;
+    for(int i=0; i<dist.length && !end ; i++)
     {
       getNext = new1.get(i);
       System.out.println(successors[getNext]);
+      for(int i2=0; i2<successors[getNext].size(); i2++)
+      {
+        if (successors[getNext].get(i2)==x) 
+        {
+          xFlag=true;
+        }
+        if (successors[getNext].get(i2)==y) 
+        {
+          yFlag=true;
+        }
+        if(getNext==x && yFlag==true)
+        {
+          end = true;
+          ret = x;
+        }
+        else if(getNext==y && xFlag==true)
+        {
+          end = true;
+          ret = y;
+        }
+        else if(yFlag==true&&xFlag==true)
+        {
+          end = true;
+          ret = getNext;
+        }
+        else
+        {
+          yFlag=false;
+          xFlag=false;
+        }
+      }
     }
     
     return ret;

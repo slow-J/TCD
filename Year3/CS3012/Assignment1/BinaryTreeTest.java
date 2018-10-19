@@ -107,11 +107,10 @@ public class BinaryTreeTest
     dag.addEdge(3, 7);
     dag.addEdge(2, 0);
     System.out.println(dag.toString());
-    dag.lowestCommonAncestor(8, 9);
 
-    System.out.println();
-    LinkedList<Integer>  xbfs= dag.DFS();
-    xbfs.forEach(System.out::print);
+    assertEquals("Checking lca of keys 8 and 9", 8, (dag.lowestCommonAncestor(8, 9)));
+    //LinkedList<Integer>  xbfs= dag.DFS();
+   // xbfs.forEach(System.out::print);
   }
   
   @Test
