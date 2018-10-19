@@ -1,4 +1,5 @@
 //@version 1.3 19/10/18 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -79,6 +80,8 @@ public class DirectedAcyclicGraph
     if (!validateVertex(x) || !validateVertex(y)) 
       return -1;
     int ret =-1;
+    if(x==y)
+      return x;
     for(int i=0; i<indegree.length; i++ )
     {
       if(indegree[i]==0)
@@ -87,53 +90,74 @@ public class DirectedAcyclicGraph
     if (ret == x || ret == y)
       return ret;
     
-    LinkedList<Integer> xbfs = bfs(x);
-    LinkedList<Integer> ybfs = bfs(y);
+    LinkedList<Integer> df = DFS();
+    LinkedList<Integer> new1 = new LinkedList();
+    boolean checkX = false;
+    boolean checkY = false;
+    int a;
+    for(int i = 0; i< df.size() && (checkX==false||checkY==false) ; i++)
+    {
+      
+      a= df.get(i);
+      System.out.println(a);
+      if(a==x)
+      {
+        checkX=true;
+      }
+      else if (a==y)
+      {
+        checkY=true;        
+      }
+      new1.add(i);
+    }
+    //new1.forEach(System.out::print);
     
     
     return ret;
   }
  
   
-  // prints BFS traversal from a given source s 
-  public LinkedList<Integer> bfs(int s) 
+
+  private LinkedList<Integer> DFSUtil(LinkedList<Integer> ret,  int v,boolean visited[]) 
   { 
-    LinkedList<Integer> ret= new LinkedList();
-    // Mark all the vertices as not visited
-    boolean visited[] = new boolean[indegree.length];
-    
-    // queue for BFS
-    LinkedList<Integer> queue = new LinkedList<Integer>();
+    // Mark the current node as visited and print it
 
-    // Mark the current node as visited and enqueue it
-    visited[s] = true;
-    queue.add(s);
-
-    while (queue.size() != 0) 
+    visited[v] = true;
+    //System.out.print(v + " ");
+    ret.add(v);
+    // Recur for all the vertices adjacent to this vertex
+    Iterator<Integer> i = successors[v].listIterator();
+    while (i.hasNext()) 
     {
-      // Dequeue a vertex from queue and print it
-      s = queue.poll();
-      System.out.print(s + " ");
-      ret.add(s);
-      //findDepth(s);
-      
-      // Get all adjacent vertices of the dequeued vertex s
-      // If a adjacent has not been visited, then mark it
-      // visited and enqueue it
-      Iterator<Integer> i = successors[s].listIterator();
-      while (i.hasNext()) 
+      int n = i.next();
+      if (!visited[n]) 
       {
-        int n = i.next();
-        if (!visited[n]) 
-        {
-          visited[n] = true;
-          queue.add(n);
-        }
+        DFSUtil(ret, n, visited);
       }
     }
     return ret;
-  }
+  } 
 
-  /*
-  public int findDepth(int s) 
+  // The function to do DFS traversal. It uses recursive DFSUtil() 
+  public LinkedList<Integer> DFS() 
+  { 
+    LinkedList<Integer> ret= new LinkedList();
+    int root =-1;
+    for(int i=0; i<indegree.length; i++ )
+    {
+      if(indegree[i]==0)
+      {
+        root = i;
+      }
+    }
+    // Mark all the vertices as not visited(set as
+    // false by default in java)
+    boolean visited[] = new boolean[indegree.length];
+
+    // Call the recursive helper function to print DFS traversal
+    return DFSUtil(ret, root, visited);
+  } 
+  
+  
+
 }

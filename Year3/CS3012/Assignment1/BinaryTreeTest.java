@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.LinkedList;
+
 import org.junit.Test;
 
 public class BinaryTreeTest 
@@ -105,8 +107,11 @@ public class BinaryTreeTest
     dag.addEdge(3, 7);
     dag.addEdge(2, 0);
     System.out.println(dag.toString());
-    dag.bfs(1);
-    //dag.DFS(2);
+    dag.lowestCommonAncestor(8, 9);
+
+    System.out.println();
+    LinkedList<Integer>  xbfs= dag.DFS();
+    xbfs.forEach(System.out::print);
   }
   
   @Test
