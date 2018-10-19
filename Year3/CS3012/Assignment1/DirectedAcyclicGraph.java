@@ -94,30 +94,54 @@ public class DirectedAcyclicGraph
     LinkedList<Integer> new1 = new LinkedList();
     boolean checkX = false;
     boolean checkY = false;
-    int a;
+    int getNext;
     for(int i = 0; i< df.size() && (checkX==false||checkY==false) ; i++)
     {
       
-      a= df.get(i);
-      System.out.println(a);
-      if(a==x)
+      getNext= df.get(i);
+      System.out.println(getNext);
+      if(getNext==x)
       {
         checkX=true;
       }
-      else if (a==y)
+      else if (getNext==y)
       {
         checkY=true;        
       }
-      new1.add(i);
+      new1.add(df.get(i));
     }
     //new1.forEach(System.out::print);
-    
+    int[][] dist = new int[new1.size()][2];//[arrayIndex][dist to x dist[][0] or y dist[][1]]
+    for(int i=0; i<dist.length; i++)
+    {
+      getNext = new1.get(i);
+      System.out.println(successors[getNext]);
+    }
     
     return ret;
   }
  
   
+  // The function to do DFS traversal
+  public LinkedList<Integer> DFS() 
+  { 
+    LinkedList<Integer> ret= new LinkedList();
+    int root =-1;
+    for(int i=0; i<indegree.length; i++ )
+    {
+      if(indegree[i]==0)
+      {
+        root = i;
+      }
+    }
+    // Mark all the vertices as not visited(set as
+    // false by default in java)
+    boolean visited[] = new boolean[indegree.length];
 
+    // Call the recursive helper function to print DFS traversal
+    return DFSUtil(ret, root, visited);
+  } 
+  
   private LinkedList<Integer> DFSUtil(LinkedList<Integer> ret,  int v,boolean visited[]) 
   { 
     // Mark the current node as visited and print it
@@ -138,26 +162,7 @@ public class DirectedAcyclicGraph
     return ret;
   } 
 
-  // The function to do DFS traversal. It uses recursive DFSUtil() 
-  public LinkedList<Integer> DFS() 
-  { 
-    LinkedList<Integer> ret= new LinkedList();
-    int root =-1;
-    for(int i=0; i<indegree.length; i++ )
-    {
-      if(indegree[i]==0)
-      {
-        root = i;
-      }
-    }
-    // Mark all the vertices as not visited(set as
-    // false by default in java)
-    boolean visited[] = new boolean[indegree.length];
-
-    // Call the recursive helper function to print DFS traversal
-    return DFSUtil(ret, root, visited);
-  } 
-  
+ 
   
 
 }
