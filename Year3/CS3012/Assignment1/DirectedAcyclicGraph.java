@@ -89,7 +89,6 @@ public class DirectedAcyclicGraph
     }    
     if (ret == x || ret == y)
       return ret;
-    
     LinkedList<Integer> df = DFS();
     LinkedList<Integer> new1 = new LinkedList();
     boolean checkX = false;
@@ -110,15 +109,17 @@ public class DirectedAcyclicGraph
       }
       new1.add(df.get(i));
     }
+    
     //new1.forEach(System.out::print);
-    int[][] dist = new int[new1.size()][2];//[arrayIndex][dist to x dist[][0] or y dist[][1]]
+    //int[][] dist = new int[new1.size()][2];//[arrayIndex][dist to x dist[][0] or y dist[][1]]
     boolean end = false;
     boolean xFlag = false;
     boolean yFlag = false;
-    for(int i=0; i<dist.length && !end ; i++)
+
+    for(int i=0; i<new1.size() && !end ; i++)
     {
       getNext = new1.get(i);
-      System.out.println(successors[getNext]);
+      //System.out.println(successors[getNext]);
       for(int i2=0; i2<successors[getNext].size(); i2++)
       {
         if (successors[getNext].get(i2)==x) 
@@ -132,17 +133,17 @@ public class DirectedAcyclicGraph
         if(getNext==x && yFlag==true)
         {
           end = true;
-          ret = x;
+          return x;
         }
         else if(getNext==y && xFlag==true)
         {
           end = true;
-          ret = y;
+          return y;
         }
-        else if(yFlag==true&&xFlag==true)
+        else if(yFlag==true&&xFlag==true&&!end)
         {
           end = true;
-          ret = getNext;
+          return getNext;
         }
         else
         {
@@ -152,7 +153,29 @@ public class DirectedAcyclicGraph
       }
     }
     
-    return ret;
+    int px=0;
+    int py=0;
+    for(int i=0; i<new1.size(); i++)
+    {
+      getNext = new1.get(i);
+      //System.out.println(successors[getNext]);
+      for(int i2=0; i2<successors[getNext].size(); i2++)
+      {
+        if (successors[getNext].get(i2)==x) 
+        {
+          px=getNext;
+        }
+        if (successors[getNext].get(i2)==y) 
+        {
+          py=getNext;
+        }
+        
+      }
+    }
+    System.out.println(px+" "+py);
+    return lowestCommonAncestor(px,py);
+    //System.out.println(Arrays.deepToString(dist));
+    //return ret;
   }
  
   
