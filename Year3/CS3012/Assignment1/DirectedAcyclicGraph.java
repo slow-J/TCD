@@ -1,5 +1,4 @@
 //@version 1.3 19/10/18 
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -11,6 +10,7 @@ public class DirectedAcyclicGraph
   LinkedList<Integer> successors[];
   private int[] indegree;
   
+  @SuppressWarnings("unchecked")
   public DirectedAcyclicGraph(int totalVertices)
   {
     this.totalVertices = totalVertices;
@@ -90,7 +90,7 @@ public class DirectedAcyclicGraph
     if (ret == x || ret == y)
       return ret;
     LinkedList<Integer> df = DFS();
-    LinkedList<Integer> new1 = new LinkedList();
+    LinkedList<Integer> new1 = new LinkedList<Integer>();
     boolean checkX = false;
     boolean checkY = false;
     int getNext;
@@ -110,8 +110,6 @@ public class DirectedAcyclicGraph
       new1.add(df.get(i));
     }
     
-    //new1.forEach(System.out::print);
-    //int[][] dist = new int[new1.size()][2];//[arrayIndex][dist to x dist[][0] or y dist[][1]]
     boolean end = false;
     boolean xFlag = false;
     boolean yFlag = false;
@@ -119,17 +117,14 @@ public class DirectedAcyclicGraph
     for(int i=0; i<new1.size() && !end ; i++)
     {
       getNext = new1.get(i);
-      //System.out.println(successors[getNext]);
       for(int i2=0; i2<successors[getNext].size(); i2++)
       {
         if (successors[getNext].get(i2)==x) 
-        {
           xFlag=true;
-        }
+        
         if (successors[getNext].get(i2)==y) 
-        {
           yFlag=true;
-        }
+        
         if(getNext==x && yFlag==true)
         {
           end = true;
@@ -158,7 +153,6 @@ public class DirectedAcyclicGraph
     for(int i=0; i<new1.size(); i++)
     {
       getNext = new1.get(i);
-      //System.out.println(successors[getNext]);
       for(int i2=0; i2<successors[getNext].size(); i2++)
       {
         if (successors[getNext].get(i2)==x) 
@@ -174,7 +168,6 @@ public class DirectedAcyclicGraph
     }
     System.out.println(px+" "+py);
     return lowestCommonAncestor(px,py);
-    //System.out.println(Arrays.deepToString(dist));
     //return ret;
   }
  
@@ -182,7 +175,7 @@ public class DirectedAcyclicGraph
   // The function to do DFS traversal
   public LinkedList<Integer> DFS() 
   { 
-    LinkedList<Integer> ret= new LinkedList();
+    LinkedList<Integer> ret= new LinkedList<Integer>();
     int root =-1;
     for(int i=0; i<indegree.length; i++ )
     {
@@ -191,8 +184,7 @@ public class DirectedAcyclicGraph
         root = i;
       }
     }
-    // Mark all the vertices as not visited(set as
-    // false by default in java)
+    // Mark all the vertices as not visited
     boolean visited[] = new boolean[indegree.length];
 
     // Call the recursive helper function to print DFS traversal
