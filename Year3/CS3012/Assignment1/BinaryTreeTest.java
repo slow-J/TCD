@@ -13,6 +13,21 @@ public class BinaryTreeTest
   }
   
   @Test
+  public void testPut()
+  {
+	  BinaryTree<Integer, Integer> bst = new BinaryTree<Integer, Integer>();
+
+    bst.put(7, 7);
+    bst.put(3, 3);
+    bst.put(1, 1);
+    bst.put(2, 2);
+    bst.put(6, 6);
+    bst.put(4, 4);
+    bst.put(5, 5);
+    assertEquals("test method works correctly", "(((()1(()2()))3((()4(()5()))6()))7())", bst.printKeysInOrder());
+}
+  
+  @Test
   public void testLCA1()
   {
     BinaryTree<Integer, Integer> bst = new BinaryTree<Integer, Integer>();
@@ -82,13 +97,16 @@ public class BinaryTreeTest
     DirectedAcyclicGraph dag = new DirectedAcyclicGraph(10);
     dag.addEdge(8, 9);
     dag.addEdge(1, 8);
-    dag.addEdge(2, 4);
+    dag.addEdge(1, 2);
     dag.addEdge(3, 4);
-    dag.addEdge(5, 0);
-    dag.addEdge(4, 1);
-    dag.addEdge(6, 1);
-    dag.addEdge(7, 0);
+    dag.addEdge(2, 3);
+    dag.addEdge(1, 5);
+    dag.addEdge(4, 6);
+    dag.addEdge(3, 7);
+    dag.addEdge(2, 0);
     System.out.println(dag.toString());
+    dag.bfs(1);
+    //dag.DFS(2);
   }
   
   @Test
@@ -100,18 +118,16 @@ public class BinaryTreeTest
     dag.addEdge(2, 5);
     dag.addEdge(3, 4);
     dag.addEdge(5, 0);
-    dag.addEdge(4, 1);
-    dag.addEdge(6, 1);
-    dag.addEdge(7, 0);
-    dag.addEdge(5, 2);
-    dag.addEdge(7, 3);
+    dag.addEdge(4, 7);
+    dag.addEdge(1, 6);
+    dag.addEdge(7, 15);
+    dag.addEdge(5, 17);
     dag.addEdge(8, 5);
     dag.addEdge(9, 4);
     dag.addEdge(12, 0);
     dag.addEdge(14, 1);
-    dag.addEdge(20, 1);
-    dag.addEdge(19, 0);
-    System.out.println(dag.toString());
+    dag.addEdge(19, 4);
+    //System.out.println(dag.toString());
   }
   
 }
