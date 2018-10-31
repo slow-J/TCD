@@ -1,0 +1,59 @@
+Q2:
+maxDepth = 0;
+currentDepth = 0;
+overflow = 0;
+underflow = 0;
+windowsUsed = 2; 
+//noOfWindows = registers
+
+// at entry
+currentDepth++;
+if (currentDepth > maxDepth)
+{
+  maxDepth = currentDepth;
+}
+if (windowsUsed == noOfWindows)
+{
+  overflow++;
+}
+else
+{
+  windowsUsed++;
+}
+
+//at exit
+currentDepth--;
+if (windowsUsed == 2)
+{
+  underflow++;
+}
+else
+{
+  windowsUsed--;
+}
+ 
+6 register: 
+ackerman(3, 6)
+172233 calls
+511 max depth
+84885 overflow
+84885 underflow
+
+8 register:  
+ackerman(3, 6)
+172233 calls
+511 max depth
+83911 overflow
+83911 underflow
+
+16 register: 
+ackerman(3, 6)
+172233 calls
+511 max depth
+80142 overflow
+80142 underflow   
+
+Q3:
+1.9 milliseconds
+I made a c program that calls the ackerman(3, 6) function N times and calculates the run time 
+	each time then gets an average. The larger the size of N, the more accurate the code

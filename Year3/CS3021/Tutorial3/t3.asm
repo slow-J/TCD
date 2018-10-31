@@ -2,13 +2,13 @@
       add   r0, #4, r9
 min
 
-min:  add   r26, r0,  r1      ++++++++++++++++++++++; v=c
+min:  add   r26, r0,  r1      ; v=c
       sub   r27, r1,  r0(C)   ; b<v
       jge   min0
       xor   r0,  r0,  r0
       add   r27, r0,  r1      ; c<v
       
-min0: sub   r28, r1,  r0(C)   ; c<v0
+min0: sub   r28, r1,  r0(C)   ; c<v
       jge   min1
       xor   r0,  r0,  r0
       add   r28, r0,  r1
@@ -34,7 +34,7 @@ p:    add   r9,  r0,  r10     ;
       xor   r0,  r0,  r0
       
 gcd
-
+//unoptimised
 gcd:  add   r26, r0,  r16
       add   r27, r0,  r11
       sub   r11, #0,  r0(C)   ; cmp
@@ -42,7 +42,7 @@ gcd:  add   r26, r0,  r16
       xor   r0,  r0,  r0
       add   r27, r0,  r10
       mod   r26, r27, r11
-      call  r25, gcd
+      call  r25, gcd          ; recursive call
       ret   r25, 0
       
 gcd0: ret   r16, 0            ; ret a      
