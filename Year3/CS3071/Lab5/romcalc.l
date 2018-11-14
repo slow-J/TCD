@@ -14,6 +14,8 @@
 "-"	 { return SUB; }
 "*"	 { return MUL; }
 "/"	 { return DIV; }
+"{"	 { return OPEN; }
+"}"	 { return CLOSE; }
 "I"	 { return I; }
 "IV" { return IV; }
 "V"	 { return V; }
