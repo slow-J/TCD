@@ -1,5 +1,3 @@
-Work in progress, due week 9  
-
 Write a Bison program that takes a series of expressions using uppercase 
 Roman numerals as input, and computes and prints the corresponding value.
 The expressions should only contain + - / * (associativity is left to 
