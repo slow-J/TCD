@@ -31,8 +31,9 @@ data Expr
 
 -- Implement:
 ins :: Ord k => k -> d -> Tree k d -> Tree k d
-ins _ _ _  = error "ins NYI"
-ins x Nil = Node Nil x Nil
+ins k d Nil = Leaf k d
+-- ins k d Br( left)( right) k d 
+
 
 -- Part 2 : Tree Lookup -------------------------------
 
@@ -53,8 +54,8 @@ lkp _ _ = error "lkp NYI"
 -}
 
 instance Num Expr where
-  e1 + e2 = error "+ not yet defined for Expr"
-  e1 - e2 = error "- not yet defined for Expr"
+  e1 + e2 = Add e1 e2
+  e1 - e2 = Sub e1 e2
   e1 * e2 = error "* not yet defined for Expr"
   negate e = error "negate not yet defined for Expr"
   abs e = error "abs not yet defined for Expr"
