@@ -1,4 +1,4 @@
-Work in progress.   
+#TODO get final edition from trinity computers  
 Implement a calculator using Bison that supports variables. Variables can be any of
 the 26 lower case letters. Numbers can be in the range zero to nine.  
 ':=' will be used for assignment and each statement will be terminated by a semicolon.
