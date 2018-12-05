@@ -2,8 +2,10 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
-#include <map>
-static std::map<std::string, int> vars;
+//static std::map<std::string, int> vars;
+//char c = '5';
+//int x = c - '0';
+int alphabet[26] = { 0 };
 int yylex ();
 void yyerror(char *s);
 int error=0;
@@ -23,17 +25,23 @@ start1:
  ; 
 
 printFun: expr
- | PRINT VARIABLE { if(!error){ printf("%d\n", $2); } } 
+ | PRINT VARIABLE { if(!error){ int a = $2-'0'-49; printf("%d\n", alphabet[a]); } } 
  ;
  
-expr: factor
- | INT                  { $$ = $1; }
- | VARIABLE             { $$ = vars[*$1]; delete $1; }
- | VARIABLE ASSIGN expr { $$ = vars[*$1] = $3; delete $1; }
- | expr ADD factor      { $$ = $1 + $3; }
- | expr MINUS factor    { $$ = $1 - $3; }
+expr:
+ | INT                  { $$ = $1;  }
+ | VARIABLE             {  int a = $1-'0'-49; $$= alphabet[a]; }
+ | VARIABLE ASSIGN expr { int a = $1-'0'-49; alphabet[a]=$3; }
+ //| VARIABLE ASSIGN expr { $$ = vars[*$1] = $3; delete $1; }
+ | expr ADD expr      { $$ = $1 + $3; }
+ | expr MINUS expr MINUS expr   { $$ = $1 - $3 - $5; }
+ | expr MINUS expr    { $$ = $1 - $3; }
+ | expr MUL expr { $$ = $1 * $3; }
+ | expr DIV expr { $$ = $1 / $3; }
+ //| MINUS expr { $$ = -$2; } /// fix a probably this answer should be -4 is 2 a:=1-2-3
+ | OPEN expr CLOSE { $$ = $2; }
  ;
-
+/*
 factor: term
  | factor MUL term { $$ = $1 * $3; }
  | factor DIV term { $$ = $1 / $3; }
@@ -43,7 +51,7 @@ term:
  | MINUS expr { $$ = -$2; }
  | OPEN expr CLOSE { $$ = $2; }
  ;
- 
+ */
 %%
 int main()
 {

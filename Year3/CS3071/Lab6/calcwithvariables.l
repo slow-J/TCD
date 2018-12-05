@@ -17,12 +17,11 @@
 "{"	 { return OPEN; }
 "}"	 { return CLOSE; }
 ":=" { return ASSIGN; }
-[0-9] { atoi(yytext); return INT; }
-[a-z] { yylval = yytext[0]; 
-        return VARIABLE; }
+[0-9]   { yylval = atoi(yytext); return INT; }
+[a-z]   { yylval = yytext[0]; return VARIABLE; }
 "print" { return PRINT; }
-[ \s\t\r]	|
-\n	 { return EOL; }
-. { error=1; }
+";"     { return EOL; }
+[ \s\t\r\n] { }
+.       { error=1; }
 %%
 
