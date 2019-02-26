@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\title{Stats1}
+\author{Jakub Slowinski}
+\begin{document}
+
+\begin{enumerate}
+  \item 
+  \begin{enumerate}[label=(\alph*)]
+    \item Blah.
+    \[6*6*6=216\]
+    \item There are 3 possible outcomes which you have to add together, a)you can have 3 3s(3C1) and the rest of the dice can't be 3 so 5 possibilities on each, b)2 3s(3C2) and another dice with 5 possibilities, c) 3 3s(3C3).
+    \[ \binom{3}{1} * 5^2 = 75\]
+    \[ \binom{3}{2} * 5   = 15\]
+    \[ \binom{3}{3}       = 1 \]
+    \[ 75+15+1 = 91 \]
+    \[ \frac{91}{216} = 0.4213 \]
+    
+    \item Included in screenshot
+    
+    \item The only way to get 17 out of 3 dice is 6 6 5.
+    \\ The 5 can be in 3 different places divided by 126 total combinations.
+    \[ \frac{3}{216} = 0.0139 \]
+    \item if 1 is first roll the combinations possible for a value of 12 is 1 5 6 or 1 6 5. The total combinations for last 2 dice is 6*6
+    \[ \frac{2}{6^2} = 0.0556\] 
+  \end{enumerate}
+  \item
+  \begin{enumerate}[label=(\alph*)]
+  
+    \item AAA.
+    \[ (\frac{1}{6}*\frac{1}{6})+(\frac{5}{6}*\frac{1}{20}) \]
+    \[ \frac{1}{36} + \frac{1}{24} \]
+    \[ 0.0695 \]
+    
+    \item AA.
+    \[ 0+(\frac{5}{6}*\frac{1}{20}) = 0.0417 \]
+    
+  \end{enumerate}
+  \item Bayes
+  \\ A = suspect is guilty
+  \\ B = suspect has characteristics
+  \[ P(A|B) = \frac{P(B|A)P(A)}{P(B)} \]
+  \[ = \frac{1*0.6}{P(B)} \]
+  \[ = \frac{0.6}{P(B|A)P(A) + P(B|A^c)P(A^c)} \]
+  \[ = \frac{0.6}{1*0.6+0.2*0.4} \]
+  \[ = \frac{0.6}{0.68} \]
+  \[ = 0.8823\]
+  \item Matlab.
+\end{enumerate}
+\end{document}

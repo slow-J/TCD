@@ -6,6 +6,42 @@
 \begin{document}
 
 \begin{enumerate}
+  \item 
+  \begin{enumerate}[label=(\alph*)]
+    \item There are 10 possible letters.
+    \[10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1\]
+    \[10! = 3628800\]
+    \item The 2 letters have to be next to each other, EF counts as one item and there are 9 items now that can be arranged in any order. E and F can be order of: EF or FE hence 2!, which is just 2.
+    \[9! * 2! = 725760\]
+    \item There are 6 letters so 6! different combinations dividided by the amount of combination of Ns(2!) and As(3!), there is only 1 B so it doesnt matter. 
+    \[ \frac{6!}{3! * 2!} = 60 \]
+    \item 5 possible letters, choose 3.
+    \[ \binom{5}{3} = 10 \]
+  \end{enumerate}
+  \item
+  \begin{enumerate}[label=(\alph*)]
   
+    \item 6 sided dice rolled 4 times.
+    \[ 6^4 = 1296 \]
+    \item 4 dice, 2 of them roll a 3 and 2 roll anything other than a 3.
+    \[ \binom{4}{2} * 5^2 = 150 \]
+    
+    \item There are 3 possible outcomes which you have to add together, a)you can have 2 3s(4C2) and the rest of the dice can't be 3 so 5 possibilities on each, b)3 3s(4C3) and another dice with 5 possibilities, c) 4 4s(4C4).
+    \[ \binom{4}{2} * 5^2 = 150\]
+    \[ \binom{4}{3} * 5   = 20\]
+    \[ \binom{4}{4}       = 1 \]
+    \[ 150+20+1 = 171 \]
+    
+  \end{enumerate}
+  \item
+  \begin{enumerate}[label=(\alph*)]
+  
+    \item 8 different cards so 8!, but there are 4 suits containing 2 aces each.
+    \[ \frac{8!}{2!*2!*2!*2!} = 2520 \]
+    
+    \item 8 cards = 4 distinct cards, choose 2.
+    \[ \binom{4}{2} = 6 \]
+    \item The good suits are half of the total suit amount. Since you still have 2 cards you can half the answer from Q3b to receive 3 as the amount of ways to get good cards.
+  \end{enumerate}
 \end{enumerate}
 \end{document}
