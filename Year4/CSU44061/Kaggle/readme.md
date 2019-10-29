@@ -1,1 +1,1 @@
-Link to repo with work: **submission date not up yet**
+Link to repo with work: https://github.com/slow-J/Kaggle_comp_ml  
