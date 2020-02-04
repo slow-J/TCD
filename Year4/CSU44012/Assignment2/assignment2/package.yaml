@@ -1,0 +1,66 @@
+name:                assignment2
+version:             0.1.0.0
+github:              "slow-J/assignment2"
+license:             BSD3
+author:              "Jakub Slowinski"
+maintainer:          "example@example.com"
+copyright:           "2019 Jakub Slowinski"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+data-files:
+- src/static/index.html
+- src/static/favicon.ico
+# - src/static/stylesheet.css
+
+# data-dir: src/static
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/slow-J/assignment2#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- random
+- MonadRandom
+- scotty
+- http-types
+- blaze-html
+- text
+- wai-middleware-static
+- wai-extra >= 3.0.0
+- aeson
+- bytestring
+- deepseq
+
+library:
+  source-dirs: src
+
+executables:
+  assignment2-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - assignment2
+
+tests:
+  assignment2-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - assignment2

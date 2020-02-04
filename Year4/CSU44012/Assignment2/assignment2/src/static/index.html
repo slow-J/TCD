@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <title>Minesweeper-o-Matic</title>
+    <!-- small bit of css -->
+    <style>
+    #winLoss {
+        background-color: yellow;
+        font-size: 40px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id ="game-frame">
+        <div id="game-container">
+            <div id = "top">
+                <h1>Minesweeper :D</h1>
+                <div id="sidePanel">
+                    <button id="newGame" onclick="startNewGame()" />Click here for new game</button>
+                </div>
+                </div>
+                <div id="winLoss"></div>
+                <div id="grid">
+                    <form id="frm1">
+                      Open or Flag box (give index number here): <input type="text" name="fname">
+                  </form>
+                  <br><br>
+                  <button onclick="openBox()">Open</button>
+                  <p id="demo"></p>
+                  <button onclick="flagBox()">Flag</button><br><br>
+                  <button id="autoOpen" onclick="autoOpen()" />Click here for auto open move</button><br>
+                  <button id="autoSolve" onclick="autoFlag()" />Click here for auto flag move</button>
+                  <p id="demo2"></p>
+
+                  <!-- <div id="windiv">[WinCheck]</div> -->
+                  <div id="flagdiv">[Flagcount]</div>
+                  <div id="foo"></div>
+
+              </div>
+
+              <div id= "byline">
+                <p>Jakub Slowinski 16319781</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var viewModel = null;
+        var json1=null;
+        var globalCols = null;
+        var globalFlags = null;
+        var lossIfOne = 0;
+        var winIfOne = 0;
+
+        // alignWonLostBanner();
+        updateFromServer();
+        function updateFromServer () {
+            getAndUpdateViewModel("/gameState");
+        }
+        function startNewGame() {
+            postAndUpdateViewModel("/newMatch");
+        }
+
+        // sets up initial game
+        function getAndUpdateViewModel(operation){
+            $.getJSON(operation)
+            .done(function(data) {
+                console.log(data);
+                var xx = document.getElementById("test")
+                while (xx != null){
+                    document.getElementById("test").remove();
+                    xx= document.getElementById("test")
+                }
+                globalCols = data.cols;
+                var rows = data.rows;
+                lossIfOne = data.losscheck;
+                winIfOne = data.wincheck;
+                globalFlags = "Flags left: " + data.flagCount;
+                board = data.board;
+                var niceBoard = "";
+                var div = document.createElement('div');
+                var cols = globalCols;
+                if(cols != null){
+                    var i = 0;
+                    var j =0;
+                    var boardAsStr = (JSON.stringify(board)).split(",");
+                    var tmpstr = "";
+                    t = document.createElement('table');
+                    t.id = "test";
+                    for (i=0; i<rows; i++)
+                    {
+                        r = t.insertRow(i);
+                        for (j=0; j < cols; j++)
+                        {
+                            var pos = (i*cols)+j;
+                            var str = boardAsStr[pos].replace("\"box\":", (pos+1) +": ");
+                            str = str.replace("\"", "");
+                            str = str.replace("\"", "");
+                            str = str.replace("[{", "{");
+                            str = str.replace("}]", "}");
+                            c = r.insertCell(j);
+                            c.innerHTML = str;
+                        }
+                    }
+                    document.getElementById("foo").appendChild(t);
+                }
+                $("#flagdiv").text(JSON.stringify(globalFlags));
+
+                updateGameWonLostBanner();
+            }).fail(function() {
+                console.log("Problem getting update from server for [" + operation + "] operation...");
+            });
+        }
+
+        // gets called also on openBox and flagBox
+        function postAndUpdateViewModel(operation){
+            $.post(operation)
+            .done(function(data) {
+                console.log(data);
+                var xx = document.getElementById("test")
+                while (xx != null){
+                    document.getElementById("test").remove();
+                    xx= document.getElementById("test")
+                }
+                globalCols = data.cols;
+                var rows = data.rows;
+                lossIfOne = data.losscheck;
+                winIfOne = data.wincheck;
+                globalFlags = "Flags left: " + data.flagCount;
+                board = data.board;
+                var niceBoard = "";
+                var div = document.createElement('div');
+                var cols = globalCols;
+                if(cols != null){
+                    // niceBoard = new Array(globalCols);
+                    var i = 0;
+                    var j =0;
+                    var boardAsStr = (JSON.stringify(board)).split(",");
+                    var tmpstr = "";
+                    t = document.createElement('table');
+                    t.id = "test";
+                    for (i=0; i<rows; i++)
+                    {
+                        r = t.insertRow(i);
+                        for (j=0; j < cols; j++)
+                        {
+                            var pos = (i*cols)+j;
+                            var str = boardAsStr[pos].replace("\"box\":", (pos+1) +": ");
+                            str = str.replace("\"", "");
+                            str = str.replace("\"", "");
+                            str = str.replace("[{", "{");
+                            str = str.replace("}]", "}");
+                            c = r.insertCell(j);
+                            c.innerHTML = str;
+                        }
+                    }
+                    document.getElementById("foo").appendChild(t);
+                }
+                $("#flagdiv").text(JSON.stringify(globalFlags));
+                updateGameWonLostBanner();
+            }).fail(function() {
+                console.log("Problem getting update from server for [" + operation + "] operation...");
+            });
+        }
+        function openBox() {
+            // dont change anyhting if already won
+            if (winIfOne ===1)
+            {
+
+            }
+            else {
+                x = document.getElementById("frm1");
+                var text = x.elements[0].value;
+                document.getElementById("demo").innerHTML = text;
+                console.log(text);
+                str = "/leftclick/";
+                postAndUpdateViewModel(str.concat(text));
+            }
+        }
+        function flagBox() {
+            x = document.getElementById("frm1");
+            var text = x.elements[0].value;
+            document.getElementById("demo2").innerHTML = text;
+            console.log(text);
+            str = "/rightclick/";
+            postAndUpdateViewModel(str.concat(text));
+        }
+        function autoOpen() {
+            if (winIfOne ===1)
+            {
+
+            }
+            else {
+                console.log("auto open");
+                str = "/autoOpen";
+                postAndUpdateViewModel(str);
+            }
+        }
+        function autoFlag() {
+            if (lossIfOne === 1)
+            {
+
+            }
+            else {
+                console.log("auto flag");
+                str = "/autoFlag";
+                postAndUpdateViewModel(str);
+            }
+        }
+        function updateGameWonLostBanner(){
+             if(winIfOne === 1){
+                var xx = document.getElementById("test")
+                while (xx != null){
+                    document.getElementById("test").remove();
+                    xx= document.getElementById("test")
+                }
+                console.log("Game won!");
+                $("#winLoss").text("Winner");
+                $("#winLoss").show();
+            }
+            else if(lossIfOne === 1){
+                var xx = document.getElementById("test")
+                while (xx != null){
+                    document.getElementById("test").remove();
+                    xx= document.getElementById("test")
+                }
+                console.log("Game lost!");
+                $("#winLoss").text("LOSER");
+                $("#winLoss").show();
+            }
+            else{
+                $("#winLoss").hide();
+            }
+        }
+    </script>
+</body>
+</html>
