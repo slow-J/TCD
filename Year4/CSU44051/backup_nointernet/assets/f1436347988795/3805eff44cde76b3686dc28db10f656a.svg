@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Graphicpanel</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="stroked" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Marketing" sketch:type="MSLayerGroup" transform="translate(-478.000000, -830.000000)" stroke="#535353" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <g id="Graphicpanel" transform="translate(479.000000, 837.000000)" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-1552" x="5" y="4" width="49" height="32"></rect>
+                <path d="M27.7664983,35.0001516 L21.9144234,49 L18.4776357,49" id="Path-3483"></path>
+                <path d="M39.1444313,35.0001516 L33.2923564,49 L29.8555687,49" id="Path-3483" transform="translate(34.500000, 42.000076) scale(-1, 1) translate(-34.500000, -42.000076) "></path>
+                <rect id="Rectangle-1553" x="0" y="0" width="58" height="6" rx="20"></rect>
+                <path d="M9.83900461,19.3662362 L16.3516818,21.82833 L25.3268853,18.4632233 L32.1431616,9.97671931 L39.8871019,16.9287935 L48.7096409,17.1748732" id="Path-3495"></path>
+                <path d="M10.6710911,28.9979403 C10.6710911,28.9979403 16.4991565,25.2224126 17.1020301,25.2224126 C17.7049037,25.2224126 27.7184853,25.1402419 27.7184853,25.1402419 L31.0303972,27.5491411 L36.4225255,19.5876646 L41.0764148,24.019693 L49.8872769,20.900666" id="Path-3496"></path>
+            </g>
+        </g>
+    </g>
+</svg>

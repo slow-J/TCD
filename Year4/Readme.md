@@ -8,5 +8,3 @@
   
     CSU44098 - Group Design Project  
     CSU44099 - Final Year Project  
-
-## will upload from private repo when I have time, submit an issue or something if I forget
